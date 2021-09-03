@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <section id="navs">
+        <div class="head-text">
+        <h3>Tech Home</h3>
+    </div>
+    <img src="navs.JPG" alt="" id="dropdown-img">
+    <div id="dropdown">
+        <img src="back.JPG" alt="..." id="back">
+    <a href="/">Home</a>
+    <a href="#">About</a>
+    <a href="/post/create">Create</a>
+    <a href="#">Selections</a>
+</div>
+</section>
+<section id="display-3">
+    <h1>Packages</h1>
+    <% if(posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+    <a href="/post/<%= post._id %>">
+<div class="sales-box">
+<div class="txt">
+    <h2><%= post.title %></h2>
+    <p>Little description on the package, this may contain
+        other stofs about the package. you can click to view
+        it in full if you want.
+    </p>
+</div>
+</div>
+</a>
+<% }) %>
+  <% } else { %>
+    <section id="blank-room">
+      <div class="blank">
+        <p>There are no subjects ...</p>
+      </div>
+    </section>
+  <% } %>
+</section>
+<section id="footer">
+<div class="left">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Selections</a>
+
+    <p>address: No.34,hillson street,
+        arizona, Pheoniex, United State
+    </p>
+    </div>
+    <div class="middle">
+        <p>English(UK)</p>
+        <p>English(US)</p>
+        <p>French</p>
+        <P>Espanol</P>
+        <p>Spanish</p>
+        <p>Portugis</p>
+    </div>
+    <div class="right">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Selections</a>
+
+        <p>address: No.34,hillson street,
+            arizona, Pheoniex, United State
+        </p>
+    </div>
+</section>
+
+
+
+<script>
+var navIcon = document.getElementById('dropdown-img');
+var navBar  = document.getElementById('dropdown');
+var navBack = document.getElementById('back');
+
+navIcon.addEventListener('click', function(){
+    navBar.className = 'show';
+    navIcon.className = 'hide';
+});
+
+navBack.addEventListener('click', function(){
+    navBar.className = 'hide';
+    navIcon.className = 'show';
+});
+</script>
+</body>
+</html>

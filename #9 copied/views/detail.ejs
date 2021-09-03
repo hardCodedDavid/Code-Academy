@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Details</title>
+</head>
+<body>
+    <section id="navs">
+        <div class="head-text">
+        <h3>Tech Home</h3>
+    </div>
+    <div id="dropdown">
+
+    <a href="/">Home</a>
+    <a href="#">About</a>
+    <a href="/post/edit/<%= post._id %>" >Edit Post</a>
+    <a href="/post/remove/<%= post._id %>" >Delete Post</a>
+</div>
+</section>
+
+    <section id="details">
+        <div class="detail">
+    <h1 class="det-h1"><%= post.title %></h1>
+    <p><%= post.body %></p>
+    <h3>$24,000.98</h3>
+    <a href="#" class="cart">Add to Cart</a>
+    <h2>Shipping details</h2>
+    <p>we are moving the generation to the next level by inventing techs that
+        well helps our generations one way or the other.
+    this is going to be an achivement not only to <b>Tech nation</b> but
+to the country and the world as a whole.
+this will also bring job opportunity to our youths and our leaders of tomorrow.</p>
+</div>
+</section>
+
+<div class="comment">
+<div class="comment-container">
+<h3><%= comments.text %></h3>
+
+<% if(comments.length > 0) { %>
+  <% comments.forEach(comment => { %>
+    <section>
+      <div class="comment">
+
+    <div class="writeup">
+      <h5>David</h5>
+      <h3><%= comment.text %></h3>
+      <h6>10:25AM</h6>
+    </div>
+    </div>
+    </section>
+<% }) %>
+<% } else { %>
+  <section>
+<p>there are no comments</p>
+  </section>
+<% } %>
+  <form class="comm-form" method="post" action='/post/comment/<%= post._id %>' >
+    <input type="text" name="text" placeholder="comments....">
+    <button type="submit">Send</button>
+  </form>
+</div>
+</div>
+
+
+<section id="footer">
+    <div class="left">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Selections</a>
+
+    <p>address: No.34,hillson street,
+        arizona, Pheoniex, United State
+    </p>
+    </div>
+    <div class="middle">
+        <p>English(UK)</p>
+        <p>English(US)</p>
+        <p>French</p>
+        <P>Espanol</P>
+        <p>Spanish</p>
+        <p>Portugis</p>
+    </div>
+    <div class="right">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Selections</a>
+
+        <p>address: No.34,hillson street,
+            arizona, Pheoniex, United State
+        </p>
+    </div>
+</section>
+
+
+
+
+</body>
+</html>

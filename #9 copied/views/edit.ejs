@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Create post</title>
+</head>
+<body>
+    <section id="header">
+        <div class="head-text">
+        <h3>Cash Sales</h3>
+        <div class="navs">
+        <a href="/">Home</a>
+        <a href="#">About</a>
+        <a href="#">Search</a>
+       </div>
+   </div>
+    </section>
+
+    <section id="create">
+        <h2>Edit Post</h2>
+        <div class="create-form">
+        <form action='/post/edit/<%= post._id %>' method="post">
+            <label for="title">Title:</label>
+            <input type="text" name="title" value="<%= post.title %>">
+            <label for="body">Description:</label>
+            <input type="text" style="height: 100px;" name="body" value="<%= post.body %>">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    </section>
+</body>
+</html>
