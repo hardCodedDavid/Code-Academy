@@ -1,0 +1,139 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body
+{
+    background-color: #333;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+a
+{
+ text-decoration: none;
+ color: #fff;
+}
+h2
+{ 
+ line-height: 1.2;
+ color: #fff;
+ font-weight: 300;
+ margin: 10px 0;
+ font-family: monospace;
+ font-size: 25px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+}
+span
+{
+    margin: 5px;
+
+}
+span:hover
+{
+    border-bottom: 2px #fff solid;
+
+}
+button
+{
+    background-color: rgba(6, 233, 6, 0.438);
+    border-style: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+button:hover
+{
+    background-color: #333;
+    border-style: solid;
+    border-color: rgba(6, 233, 6, 0.438);
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+.container
+{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+    margin-top: 20px;
+}
+.flex
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.navs
+{
+    font-size: 15px;
+	display: none;
+}
+.navs.show
+{
+
+display: block;
+}
+.spin
+{
+    display: none;
+}
+.spin.show
+{
+    display: block;
+}
+#head-section
+{
+    background-color: rgba(6, 233, 6, 0.438);
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 40px;
+}
+
+/*-------   Body Section 01   --------*/
+.body-01
+{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(display.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#efefef !important;
+    background-attachment: fixed;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    justify-content: center;
+    align-items: center;
+}
+#body-01
+{
+    padding-top: 30px;
+}
+
+/*-------   About  --------*/
+.about
+{
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+    margin-top: 20px;
+    color: #fff;
+    padding-bottom: 40px;
+}
+
+/*-------   Sales  --------*/
+.sales
+{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(display-2.jpg);
+    background-size: cover;
+    background-position: center;
+    color:#efefef !important;
+    background-attachment: fixed;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    justify-content: center;
+    align-items: center; 
+}

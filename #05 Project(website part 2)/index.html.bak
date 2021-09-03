@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/medias.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!----=== Header ===---->
+<section id="head-section">
+  <div class="container flex">
+    <h2>Smart Motors</h2>
+
+    <div class="spin">
+	<img src="spinner.GIF" alt="....">
+	</div>
+    <div class="navs">
+      <span><a href="#">Home</a></span>
+      <span><a href="#">About</a></span>
+      <span><a href="#">Sales</a></span>
+      <span><a href="#">Search</a></span>
+    </div>
+  </div>
+</section>
+
+<!----=== Body Section 01  ===----->
+<section id="body-01">
+  <div class="body-01 flex">
+   <div class="body-con-001">
+     <h1 style="font-size: 45px;">Mercedes-Benz</h1> 
+   <p style="margin-left: 50px;">the most rated product of the year</p>
+  </div>
+  </div>
+</section>
+
+<!----=== About  ===----->
+<section id="about">
+  <div class="about">
+    <h3 style="font-size: 35px; padding: 20px;">About Us</h3>
+    <P style="padding-bottom: 10px;">We deal with the best and affordable products to
+      make our customers happy and satisfied, we are into 
+      car repair of any product with experienced mechanics
+      for different products.
+    </P>
+    <button><a href="#">Read More</a></button>
+  </div>
+</section>
+
+<!----=== Sales  ===----->
+<section id="sales">
+  <div class="sales">
+   <h3>Top Sales</h3> 
+  </div>
+</section>
+</body>
+</html>
