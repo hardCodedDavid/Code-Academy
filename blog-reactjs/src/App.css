@@ -1,0 +1,267 @@
+*
+{
+  margin: 0px;
+  padding: 0px;
+}
+body
+{
+  background-color: rgba(229, 231, 235);
+  color: rgba(31, 41, 55);
+  font-family: sans-serif;
+}
+nav
+{
+  background-color: rgba(156, 163, 175);
+  padding: 20px;
+}
+.navigations
+{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+}
+.navigations a
+{
+  text-decoration: none;
+  margin: 0px 10px 0px 0px;
+  color: rgba(17, 24, 39);
+}
+.navigations a:hover
+{
+  color: rgba(235, 246, 215);
+}
+.navigations li
+{
+  list-style-type: none;
+}
+.navigations h2
+{
+  font-size: 25px;
+  font-weight: 500;
+}
+.h1-blog
+{
+  text-align: center;
+  padding: 20px 0px 40px 0px;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+/* Blogs */
+.blog-list a
+{
+    text-decoration: none;
+    color: rgba(31, 41, 55);
+}
+
+.each-blog
+{
+  background-color: rgb(209, 213, 219);
+  padding: 20px;
+  max-width: 1100px;
+  margin: 10px auto 10px auto;
+}
+.each-blog p
+{
+  max-height: 50px;
+  overflow: hidden;
+}
+.each-blog h5
+{
+  text-align: right;
+}
+.each-blog h2
+{
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+.each-blog h3
+{
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+
+/* Footer */
+footer
+{
+  background-color: rgba(156, 163, 175);
+  margin-top: 10%;
+}
+.foot
+{
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 800px;
+}
+.foot li
+{
+  display: flex;
+  flex-direction: column;
+}
+.foot a
+{
+  text-decoration: none;
+  margin: 10px 0px 0px 0px;
+  color: rgba(17, 24, 39);
+}
+
+/* -----------PAGE 2------------ */
+
+
+.create
+{
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 80px;
+}
+.create label
+{
+  text-align: left;
+  display: block;
+}
+.create input, .create textarea, .create select
+{
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  margin: 10px;
+}
+.create button
+{
+  background: rgb(145, 141, 137);
+  color: #fff;
+  border: 0px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  outline-style: none;
+}
+.create button:hover
+{
+  background: #fff;
+  color: rgb(145, 141, 137);
+  border: 0px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  outline-style: none;
+}
+
+
+
+
+.blog-title
+{
+  text-align: left;
+  padding: 60px 0px 0px 0px;
+  margin-left: 50px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.blog-body
+{
+  margin: 50px;
+}
+.delete
+{
+  background: rgb(145, 141, 137);
+  color: #fff;
+  border: 0px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 50px;
+  outline-style: none;
+  margin-bottom: 40px;
+}
+.delete:hover
+{
+  background: #fff;
+  color: rgb(145, 141, 137);
+  border: 0px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 50px;
+  outline-style: none;
+}
+
+
+
+.select
+{
+  background-color: rgba(229, 231, 235);
+}
+.navigation
+{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 1000px;
+}
+.navigation a
+{
+  text-decoration: none;
+  margin: 10px;
+  color: rgba(31, 41, 55);
+  padding: 5px;
+}
+.navigation li
+{
+  list-style-type: none;
+}
+.navigation a:hover
+{
+  border: 2px;
+  border-style: solid;
+  border-top: rgba(229, 231, 235);
+  border-left: rgba(229, 231, 235);
+  border-right: rgba(229, 231, 235);
+  border-radius: 3px;
+  color: rgba(131, 98, 155);
+}
+
+
+
+
+
+
+
+
+.Errors
+{
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 20px;
+}
+.loading
+{
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+
+/* ====-------A N I M A T I O N S-----======*/
+.blank
+{
+  animation-name: animi;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes animi {
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}

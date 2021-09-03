@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue App</title>
+<!-- <script src="https://unpkg.com/vue@next"></script> -->
+<script src="vueFile.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div v-if="showMess">
+	   		<h2>{{ title }}</h2>
+	   		<p>{{ value }}</p>
+	   		<button v-on:click="value++">Increase Value</button>
+	   		<button v-on:click="value--">Decrease Value</button>
+	   	</div>
+
+   		<!-- <div v-if="value <= 10">
+   			<p>Under Age</p>
+   		</div>
+   		<p v-else="">Correct Age</p> -->
+
+   		<div @click="toggleSection">
+   			<button v-if="showMess">Show Message</button>
+   			<button v-if="!showMess">Hide Message</button>
+   		</div>
+
+   	</div>
+
+<script src="app.js"></script>
+</body>
+</html>

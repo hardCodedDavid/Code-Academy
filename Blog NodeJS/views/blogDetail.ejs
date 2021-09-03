@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog Details</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+
+    <nav>
+    <div class="navigations">
+     <h2>Simple Blog</h2>
+     <li>
+       <a href="/">Home</a>
+       <a href="#">About</a>
+       <a href="/create">Create Blog</a>
+       <a href="#">Search</a>
+     </li>
+    </div>
+    </nav>
+
+
+    <h5 id="date-long"></h5>
+    <h5 id="date-DMY"></h5>
+  <h1 class="blog-title"><%= post.title %></h1>
+
+<p class="blog-body"><%= post.body %></p>
+
+<form action="/delete" method="post" name="delete-form">
+  <input type="hidden" name="Delete" value="<%= post.id %>">
+  <input type="submit" class="delete" name="delete" value="Delete Blog">
+</form>
+
+
+<script src="https://momentjs.com/downloads/moment-with-locales.min.js" ></script>
+<script type="text/javascript">
+var dateFormat = document.getElementById('date-DMY');
+  var dateLong = document.getElementById('date-long');
+  var m = moment();
+  var m2 = moment('<%= post.date_added %>');
+  var date = m2.fromNow();
+  const format = m2.format('Do MMMM yyyy')
+  dateFormat.innerHTML =   format;
+  dateLong.innerHTML =   date;
+
+</script>
+  </body>
+</html>

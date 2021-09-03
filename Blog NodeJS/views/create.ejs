@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <nav>
+   <div class="navigations">
+     <h2>Simple Blog</h2>
+     <li>
+       <a href="/">Home</a>
+       <a href="#">About</a>
+       <a href="create.html">Create Blog</a>
+       <a href="#">Search</a>
+     </li>
+   </div>
+    </nav>
+
+<h1 class="h1-blog">Create Blog</h1>
+
+<div class="create">
+  <form action="/" method="POST">
+    <label>Blog Title:</label>
+    <input type="text" name="title" placeholder="title....">
+    <label>Blog Body:</label>
+    <textarea name="body" rows="8" cols="80"></textarea>
+    <label>Blog Author:</label>
+    <input type="text" name="author" placeholder="your name.....">
+    <select class="list" name="select">
+      <option>World</option>
+      <option>Entertainment</option>
+      <option>Polities</option>
+      <option>Sport</option>
+    </select>
+    <input type="submit" class="submit" value="Sumit">
+  </form>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+
+
+    <nav id="nav">
+   <div class="navigations">
+     <h2>Simple Blog</h2>
+     <li id="nav-list">
+       <a href="/">Home</a>
+       <a href="#">About</a>
+       <a href="/create">Create Blog</a>
+       <a href="#" id="search">Search</a>
+       <p id="blank"></p>
+     </li>
+   </div>
+    </nav>
+
+    <nav class="select">
+    <div class="navigation">
+     <li id="nav-list select">
+       <a href="#">All</a>
+       <a href="#">World</a>
+       <a href="#">Polities</a>
+       <a href="#">Entertainment</a>
+       <a href="#">Sport</a>
+     </li>
+    </div>
+    </nav>
+
+      <h1 class="h1-blog">All Blogs</h1>
+    <div class="blog-list">
+      <% if(posts.length > 0) {%>
+        <% posts.forEach(post  => { %>
+      <a href="/blog/<%= post._id %>">
+      <div class="each-blog">
+      <h5 id="date-format"></h5>
+        <h2><%= post.title %></h2>
+        <p><%= post.body %></p>
+        <h3>author: <%= post.author %></h3>
+        <!-- <p><%= post.select %></p> -->
+      </div>
+
+      <script src="https://momentjs.com/downloads/moment-with-locales.min.js" ></script>
+      <script type="text/javascript">
+        var dateFormat = document.getElementById('date-format');
+        var m = moment();
+        var m2 = moment('<%= post.date_added %>');
+        var date = m2.fromNow();
+        const format = m2.format('LT')
+        dateFormat.innerHTML =  date + ' ' + format;
+
+      </script>
+
+</a>
+
+<% }) %>
+<% } else { %>
+  <div class="nothing">
+    <h3>Try to add a Blog</h3>
+    <p>There are no blogs for now!!!!</p>
+  </div>
+  <% } %>
+
+
+    </div>
+
+
+
+ <footer>
+<div class="foot">
+    <li>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Create Blog</a>
+      <a href="#">Search</a>
+    </li>
+
+
+    <li>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Create Blog</a>
+      <a href="#">Search</a>
+    </li>
+
+
+    <li>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Create Blog</a>
+      <a href="#">Search</a>
+    </li>
+
+
+ </div>
+ </footer>
+
+
+
+   </body>
+ </html>
