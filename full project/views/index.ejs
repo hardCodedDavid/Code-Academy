@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <section id="navs">
+        <div class="head-text">
+        <h3>Tech Home</h3>
+    </div>
+    <img src="/navs.JPG" alt="" id="dropdown-img">
+    <div id="dropdown">
+        <img src="back.JPG" alt="..." id="back">
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="/create">Add Selections</a>
+    <a href="/all">Selections</a>
+</div>
+</section>
+
+    <section id="display-1">
+<img src="animation-bg.jpg" alt="...." class="dis-img">
+<h2>This is our tech nation</h2>
+<p>we are moving the generation to the next level by inventing techs that
+    well helps our generations one way or the other. </p>
+    <a href="#">View More</a>
+    </section>
+
+    <section id="display-2">
+        <h1>Profile</h1>
+        <p>we are moving the generation to the next level by inventing techs that
+            well helps our generations one way or the other.
+        this is going to be an achivement not only to <b>Tech nation</b> but
+    to the country and the world as a whole.
+this will also bring job opportunity to our youths and our leaders of tomorrow. </p>
+</section>
+
+<section id="display-3">
+    <h1>Top Packages</h1>
+    <% for (var i = 0; i < data.length; i++) { %>
+    <a href="/package/<%= data[i]._id %>">
+<div class="sales-box">
+    <div class="img">
+    <img src="<%= data[i].img %>">
+</div>
+<div class="txt">
+    <h2> <%= data[i].Title %> </h2>
+    <p> <%= data[i].Description %> </p>
+    <h3> <%= data[i].Price %> </h3>
+</div>
+</div>
+</a>
+
+<% } %>
+
+
+</section>
+
+<section id="footer">
+<div class="left">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Selections</a>
+
+    <p>address: No.34,hillson street,
+        arizona, Pheoniex, United State
+    </p>
+    </div>
+    <div class="middle">
+        <p>English(UK)</p>
+        <p>English(US)</p>
+        <p>French</p>
+        <P>Espanol</P>
+        <p>Spanish</p>
+        <p>Portugis</p>
+    </div>
+    <div class="right">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Selections</a>
+
+        <p>address: No.34,hillson street,
+            arizona, Pheoniex, United State
+        </p>
+    </div>
+</section>
+
+
+
+<script>
+
+/*  var navIcon = document.getElementById('dropdown-img');
+var navBar  = document.getElementById('dropdown');
+var navBack = document.getElementById('back');
+
+navIcon.addEventListener('click', function(){
+    navBar.style.display = 'block';
+    navIcon.style.display = 'none';
+});
+
+navBack.addEventListener('click', function(){
+    navBar.style.display = 'none';
+    navIcon.style.display = 'block';
+});
+*/
+
+var navIcon = document.getElementById('dropdown-img');
+var navBar  = document.getElementById('dropdown');
+var navBack = document.getElementById('back');
+var a = document.getElementById('display-3');
+navIcon.addEventListener('click', function(){
+    navBar.className = 'show';
+    navIcon.className = 'hide';
+});
+
+navBack.addEventListener('click', function(){
+    navBar.className = 'hide';
+    navIcon.className = 'show';
+});
+
+if (<%= data.length %> > 4){
+  a.style.overflow = 'hidden';
+} else {
+  a.style.display = 'block';
+}
+</script>
+</body>
+</html>

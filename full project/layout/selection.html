@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Selections</title>
+</head>
+<body>
+    <section id="navs">
+        <div class="head-text">
+        <h3>Tech Home</h3>
+    </div>
+    <input type="search" name="search" id="search" placeholder="   search.....">
+    <img src="navs.JPG" alt="" id="dropdown-img">
+    <div id="dropdown">
+        <img src="back.JPG" alt="..." id="back">
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="add-selection.html">Add Selections</a>
+    <a href="selection.html">Selections</a>
+</div>    
+</section>
+
+    
+    <section id="display-3">
+        <a href="package-detail.html">
+            <div class="sales-box">
+                <div class="img">
+                <img src="small.jpg" alt="...">
+            </div>
+            <div class="txt">
+                <h2>Package name</h2>
+                <p>Little description on the package, this may contain 
+                    other stofs about the package. you can click to view 
+                    it in full if you want.
+                </p>
+                <h3>$23,045.63</h3>
+            </div>
+            </div>
+            </a>
+
+            <a href="package-detail.html">
+                <div class="sales-box">
+                    <div class="img">
+                    <img src="small.jpg" alt="...">
+                </div>
+                <div class="txt">
+                    <h2>Package name</h2>
+                    <p>Little description on the package, this may contain 
+                        other stofs about the package. you can click to view 
+                        it in full if you want.
+                    </p>
+                    <h3>$23,045.63</h3>
+                </div>
+                </div>
+                </a>
+
+                <a href="package-detail.html">
+                    <div class="sales-box">
+                        <div class="img">
+                        <img src="small.jpg" alt="...">
+                    </div>
+                    <div class="txt">
+                        <h2>Package name</h2>
+                        <p>Little description on the package, this may contain 
+                            other stofs about the package. you can click to view 
+                            it in full if you want.
+                        </p>
+                        <h3>$23,045.63</h3>
+                    </div>
+                    </div>
+                    </a>
+
+                    <a href="package-detail.html">
+                        <div class="sales-box">
+                            <div class="img">
+                            <img src="small.jpg" alt="...">
+                        </div>
+                        <div class="txt">
+                            <h2>Package name</h2>
+                            <p>Little description on the package, this may contain 
+                                other stofs about the package. you can click to view 
+                                it in full if you want.
+                            </p>
+                            <h3>$23,045.63</h3>
+                        </div>
+                        </div>
+                        </a>
+
+                        <a href="package-detail.html">
+                            <div class="sales-box">
+                                <div class="img">
+                                <img src="small.jpg" alt="...">
+                            </div>
+                            <div class="txt">
+                                <h2>Package name</h2>
+                                <p>Little description on the package, this may contain 
+                                    other stofs about the package. you can click to view 
+                                    it in full if you want.
+                                </p>
+                                <h3>$23,045.63</h3>
+                            </div>
+                            </div>
+                            </a>
+
+                            <a href="package-detail.html">
+                                <div class="sales-box">
+                                    <div class="img">
+                                    <img src="small.jpg" alt="...">
+                                </div>
+                                <div class="txt">
+                                    <h2>Package name</h2>
+                                    <p>Little description on the package, this may contain 
+                                        other stofs about the package. you can click to view 
+                                        it in full if you want.
+                                    </p>
+                                    <h3>$23,045.63</h3>
+                                </div>
+                                </div>
+                                </a>
+    </section>
+    
+    <section id="footer">
+        <div class="left">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Selections</a>  
+    
+        <p>address: No.34,hillson street,
+            arizona, Pheoniex, United State
+        </p>
+        </div>
+        <div class="middle">
+            <p>English(UK)</p>
+            <p>English(US)</p>
+            <p>French</p>
+            <P>Espanol</P>
+            <p>Spanish</p>
+            <p>Portugis</p>
+        </div>
+        <div class="right">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Selections</a>  
+        
+            <p>address: No.34,hillson street,
+                arizona, Pheoniex, United State
+            </p>
+        </div>
+    </section>
+
+    <script>
+
+        /*  var navIcon = document.getElementById('dropdown-img');
+        var navBar  = document.getElementById('dropdown');
+        var navBack = document.getElementById('back');
+        
+        navIcon.addEventListener('click', function(){
+            navBar.style.display = 'block';
+            navIcon.style.display = 'none';
+        });
+        
+        navBack.addEventListener('click', function(){
+            navBar.style.display = 'none';
+            navIcon.style.display = 'block';
+        });
+        */
+        
+        var navIcon = document.getElementById('dropdown-img');
+        var navBar  = document.getElementById('dropdown');
+        var navBack = document.getElementById('back');
+        
+        navIcon.addEventListener('click', function(){
+            navBar.className = 'show';
+            navIcon.className = 'hide';
+        });
+        
+        navBack.addEventListener('click', function(){
+            navBar.className = 'hide';
+            navIcon.className = 'show';
+        });
+        </script>
+</body>
+</html>

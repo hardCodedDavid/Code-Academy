@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>details || <%= data.Title %></title>
+</head>
+<body>
+    <section id="navs">
+        <div class="head-text">
+        <h3>Tech Home</h3>
+    </div>
+    <img src="/navs.JPG" alt="" id="dropdown-img">
+    <div id="dropdown">
+      <img src="/back.JPG" alt="..." id="back">
+    <a href="/">Home</a>
+    <a href="#">About</a>
+    <a href="/create">Add Selections</a>
+    <a href="selection.html">Selections</a>
+</div>
+</section>
+
+    <section id="details">
+        <div class="detail">
+          <img src="/<%= data.img %>">
+    <h1 class="det-h1"><%= data.Title %></h1>
+    <p><%= data.Description %></p>
+    <h3><%= data.Price %> </h3>
+<p id="date-format"></p>
+</div>
+<form method="post" action="/delete" class="delete">
+              <input id="prodId" name="prodId" type="hidden" value="<%= data._id %>">
+              <input type="submit"  class = "delete-btn" name="Delete" value="Delete Product">
+            </form>
+
+            <a href="/edit/<%= data._id %>">Edit</a>
+</section>
+<section id="footer">
+    <div class="left">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Selections</a>
+
+    <p>address: No.34,hillson street,
+        arizona, Pheoniex, United State
+    </p>
+    </div>
+    <div class="middle">
+        <p>English(UK)</p>
+        <p>English(US)</p>
+        <p>French</p>
+        <P>Espanol</P>
+        <p>Spanish</p>
+        <p>Portugis</p>
+    </div>
+    <div class="right">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Selections</a>
+
+        <p>address: No.34,hillson street,
+            arizona, Pheoniex, United State
+        </p>
+    </div>
+</section>
+
+<script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+<script>
+var m = moment();
+var m2 = moment('<%= data.added_date %>');
+    var navIcon = document.getElementById('dropdown-img');
+    var navBar  = document.getElementById('dropdown');
+    var navBack = document.getElementById('back');
+    var dateFormat = document.getElementById('date-format');
+    navIcon.addEventListener('click', function(){
+        navBar.className = 'show';
+        navIcon.className = 'hide';
+    });
+
+    navBack.addEventListener('click', function(){
+        navBar.className = 'hide';
+        navIcon.className = 'show';
+    });
+    var date = m2.fromNow();
+    const format = m2.format('Do MMMM yyyy LT')
+dateFormat.innerHTML = 'Posted : ' + date + ' ' + format;
+
+    </script>
+
+</body>
+</html>

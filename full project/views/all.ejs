@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/style.css">
+<title>All Packages</title>
+
+<section id="navs">
+    <div class="head-text">
+    <h3>Tech Home</h3>
+</div>
+<img src="/navs.JPG" alt="" id="dropdown-img">
+<div id="dropdown">
+  <img src="/back.JPG" alt="..." id="back">
+<a href="/">Home</a>
+<a href="#">About</a>
+<a href="/create">Add Selections</a>
+<a href="selection.html">Selections</a>
+</div>
+</section>
+
+<section id="display-3">
+    <% for (var i = 0; i < data.length; i++) { %>
+    <a href="/package/<%= data[i]._id %>">
+<div class="sales-box">
+    <div class="img">
+    <img src="<%= data[i].img %>">
+</div>
+<div class="txt">
+    <h2> <%= data[i].Title %> </h2>
+    <p> <%= data[i].Description %> </p>
+    <h3> <%= data[i].Price %> </h3>
+</div>
+</div>
+</a>
+
+<% } %>
+
+
+</section>

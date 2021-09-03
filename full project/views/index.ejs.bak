@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".../style.css">
+    <title>Home</title>
+</head>
+<body>
+    <section id="navs">
+        <div class="head-text">
+        <h3>Tech Home</h3>
+    </div>
+    <img src="/navs.JPG" alt="" id="dropdown-img">
+    <div id="dropdown">
+        <img src="back.JPG" alt="..." id="back">
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="/create">Add Selections</a>
+    <a href="selection.html">Selections</a>
+</div>    
+</section>
+
+    <section id="display-1">
+<img src="animation-bg.jpg" alt="....">
+<h2>This is our tech nation</h2>
+<p>we are moving the generation to the next level by inventing techs that
+    well helps our generations one way or the other. </p>
+    <a href="#">View More</a>
+    </section>
+
+    <section id="display-2">
+        <h1>Profile</h1>
+        <p>we are moving the generation to the next level by inventing techs that
+            well helps our generations one way or the other.
+        this is going to be an achivement not only to <b>Tech nation</b> but
+    to the country and the world as a whole.
+this will also bring job opportunity to our youths and our leaders of tomorrow. </p>
+</section>
+
+<section id="display-3">
+    <h1>Packages</h1>
+    <% for (var i = 0; i < data.length; i++) { %>  
+    <a href="#">
+<div class="sales-box">
+    <div class="img">
+    <img src="<%= data[i].img %>">
+</div>
+<div class="txt">
+    <h2> <%= data[i].Title %> </h2>
+    <p> <%= data[i].Description %> </p>
+    <h3> <%= data[i].Price %> </h3>
+</div>
+</div>
+</a>
+
+<% } %>
+
+
+</section>
+
+<section id="footer">
+<div class="left">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Selections</a>  
+
+    <p>address: No.34,hillson street,
+        arizona, Pheoniex, United State
+    </p>
+    </div>
+    <div class="middle">
+        <p>English(UK)</p>
+        <p>English(US)</p>
+        <p>French</p>
+        <P>Espanol</P>
+        <p>Spanish</p>
+        <p>Portugis</p>
+    </div>
+    <div class="right">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Selections</a>  
+    
+        <p>address: No.34,hillson street,
+            arizona, Pheoniex, United State
+        </p>
+    </div>
+</section>
+
+
+
+<script>
+
+/*  var navIcon = document.getElementById('dropdown-img');
+var navBar  = document.getElementById('dropdown');
+var navBack = document.getElementById('back');
+
+navIcon.addEventListener('click', function(){
+    navBar.style.display = 'block';
+    navIcon.style.display = 'none';
+});
+
+navBack.addEventListener('click', function(){
+    navBar.style.display = 'none';
+    navIcon.style.display = 'block';
+});
+*/
+
+var navIcon = document.getElementById('dropdown-img');
+var navBar  = document.getElementById('dropdown');
+var navBack = document.getElementById('back');
+
+navIcon.addEventListener('click', function(){
+    navBar.className = 'show';
+    navIcon.className = 'hide';
+});
+
+navBack.addEventListener('click', function(){
+    navBar.className = 'hide';
+    navIcon.className = 'show';
+});
+</script>
+
+
+<style>
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background-color: rgb(45, 53, 56);
+}
+a
+{
+    text-decoration: none;
+}
+/* === navs ===*/
+
+#navs
+{
+    color: rgb(34, 34, 34);
+    font-size: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+#navs h3
+{
+    color: rgb(201, 201, 201);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+#dropdown-img
+{
+    display: none;
+}
+#back
+{
+    display: none;
+}
+#dropdown a
+{
+    color: aliceblue;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 100;
+    margin: 5px;
+}
+
+/* ===  page-1  ===*/
+
+#display-1 h2
+{
+    color: rgb(201, 201, 201);
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+#display-1 p
+{
+    color: rgb(201, 201, 201);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 20px;
+    padding-bottom: 40px;
+}
+#display-1 a
+{
+   background-color: rgb(201, 201, 201);
+   color: rgb(45, 53, 56);
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: small;
+   padding: 3px;
+   margin-left: 20px;
+   margin-bottom: 30px;
+   border-radius: 2px;
+}
+
+
+/* ===  page-2  ===*/
+
+#display-2 h1
+{
+    color: rgb(201, 201, 201);
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    padding: 40px 0 50px 0;
+}
+#display-2 p
+{
+    color: rgb(201, 201, 201);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 20px;
+    padding-bottom: 40px;
+}
+
+/* ===  packages  ===*/
+
+#display-3 h1
+{
+    color: rgb(201, 201, 201);
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    padding: 40px 0 50px 0;
+}
+
+.sales-box
+{
+    background-color: rgb(201, 201, 201);
+    color: rgb(18, 20, 20);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#display-3 img
+{
+    max-width: 180px;
+    min-width: 180px;
+    height: 130px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+
+
+/* ===  footer  ===*/
+
+
+#footer
+{
+    background-color: rgba(0, 0, 0, 0.589);
+    display: flex;
+    gap: 40px;
+    padding: 50px;
+    color: rgb(187, 187, 187);
+}
+#footer a
+{
+    color: rgb(187, 187, 187);
+}
+
+
+/* ===  add  ===*/
+
+#add h1
+{
+    color: rgb(201, 201, 201);
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    padding: 40px 0 50px 0;
+}
+form
+{
+    display: grid;
+    max-width: 250px;
+    margin: auto;
+    color: rgb(201, 201, 201);
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    
+}
+input
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#search
+{
+    background-color: rgb(201, 201, 201);
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 250px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+/* ===  Details  === */
+
+
+
+#details h1
+{
+    color: rgb(201, 201, 201);
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: left;
+    padding: 40px 0 20px 20px;
+}
+#details h2
+{
+    color: rgb(201, 201, 201);
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: left;
+    padding: 40px 0 20px 20px;
+}
+#details h3
+{
+    color: rgb(201, 201, 201);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 20px;
+    padding-bottom: 40px;
+}
+#details p
+{
+    color: rgb(201, 201, 201);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 20px;
+    padding-bottom: 40px;
+}
+#details img
+{
+    width: 90%;
+    margin: 10px;
+}
+.cart
+{
+    text-decoration: none;
+    color: rgb(201, 201, 201);
+    background-color: rgb(73, 65, 65);
+    padding: 5px;
+    margin: 10px;
+    margin-left: 23px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 500px)
+{
+
+
+#dropdown-img
+{
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: block;
+}
+#dropdown-img.hide
+{
+    display: none;
+}
+#dropdown
+{
+    display: none;
+    background-color: rgb(12, 52, 75);
+    padding: 40px;
+}
+#dropdown.show
+{
+    display: block;
+}
+#dropdown a
+{
+    color: aliceblue;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#back
+{
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-top: -35px;
+    margin-left: -35px;
+    cursor: pointer;
+    display: block;
+}
+#display-1 img
+{
+    width: 100%;
+    height: 200%;
+}
+
+}
+
+
+</style>
+</body>
+</html>
+    
