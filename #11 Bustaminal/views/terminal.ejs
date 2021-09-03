@@ -1,0 +1,39 @@
+
+
+ <%- include("./partials/navs.ejs") %>
+
+
+
+    <!-- =========  T E R M I N A L  ======== -->
+ <section>
+   <div class="all-terminal">
+
+ <% if(datas.length > 0){ %>
+   <% datas.forEach(data => { %>
+      <div class="single-terminal">
+        <div class="left-terminal">
+         <h1><%= data.From %> - <%= data.Destination %></h1>
+         <h4><%= data.Date %></h4>
+       </div>
+       <div class="right-terminal">
+         <h1><%= data.Station %></h1>
+         <h4><%= data.Price %></h4>
+         <a href="/terminal/detail/<%= data._id %>"><button class="btn" style="padding: 10px 20px 10px 20px; margin: 0px; font-size: 15px; float: right;">Book</button></a>
+       </div>
+     </div>
+   <% }) %>
+ <% } else { %>
+        <h2 style="padding: 40px; text-align: center;">There are no trip available...</h2>
+  <% } %>
+
+   </div>
+ </section>
+
+
+
+
+
+
+
+
+<%- include("./partials/footer.ejs") %>

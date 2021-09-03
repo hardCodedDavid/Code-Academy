@@ -1,0 +1,55 @@
+
+
+<%- include("./partials/navs.ejs") %>
+
+
+
+
+<!-- =========  D E T A I L S  ======== -->
+<section>
+  <div class="details">
+
+
+  <div class="full-detail">
+    <div class="left-detail">
+        <h1><%= data.Station %></h1>
+        <h2 name="Departure" >from: <b><%= data.Departure %></b></h2>
+        <h2 name="Arrival" >Destination: <b><%= data.Arrival %></h2>
+           <p>Date: <b><%= data.Date %></b></p>
+           <p>Takeoff time: <b id="date-range"></b></p>
+           <!-- <p id="date-range"></p> -->
+       </div>
+       <div class="right-detail">
+         <p>Address:  <%= data.Address %><br></p>
+         <h4><b style="color: black;">Fee: </b> <%= data.Price %></h4>
+<form action="/delete/booking" method="POST">
+         <a href="/dashboard" class="btn-link-1">Back</a>
+        <input type="hidden" name="Delete" value="<%= data._id %>">
+       <button class="btn" type="submit" style="padding: 10px; margin: 0px; font-size: 13px; float: right;">Delete</button>
+</form>
+         </div>
+         </div>
+       </div>
+
+   </section>
+
+
+
+
+  <script src="/moment.js"></script>
+
+   <script type="text/javascript">
+        const displayDate = document.getElementById("date-range");
+        const m = moment();
+        const currentDate = moment('<%= data.Date %>');
+        const date = currentDate.fromNow();
+        const format = currentDate.format('LT')
+
+displayDate.innerHTML = date + ' ' + format;
+
+
+</script>
+
+
+
+<%- include("./partials/footer.ejs") %>

@@ -1,0 +1,61 @@
+
+
+<%- include("../partials/navs.ejs") %>
+
+<!-- =========  A D D E D   ======== -->
+
+
+
+
+
+ <h1 class="login-h1">Terminal</h1>
+
+ <div class="create">
+   <form action="/terminal" method="post" >
+     <label for="state">From:</label>
+     <select class="state" name="From" required>
+    <option>Select State</option>
+    <option>New York</option>
+    <option>Texas</option>
+    <option>Washenten DC</option>
+    <option>Pheonix</option>
+    <option>Ontario</option>
+    <option>Chinchinati</option>
+    <option>Flourida</option>
+    <option>Ohio</option>
+    <option>Georgia</option>
+    <option>Indiana</option>
+  </select>
+
+  <label for="state">Destination:</label>
+  <select class="state" name="Destination" required>
+ <option>Select State</option>
+ <option>New York</option>
+ <option>Texas</option>
+ <option>Washenten DC</option>
+ <option>Pheonix</option>
+ <option>Ontario</option>
+ <option>Chinchinati</option>
+ <option>Flourida</option>
+ <option>Ohio</option>
+ <option>Georgia</option>
+ <option>Indiana</option>
+</select>
+
+<label>Station:</label>
+<input type="text" name="Station" required>
+     <label>Address:</label>
+<textarea name="Address" rows="8" cols="80" required></textarea>
+     <label>Date:</label>
+     <input type="datetime-local" name="Date" required>
+
+     <label>Price:</label>
+     <input type="text" name="Price" required>
+
+     <button type="submit" name="submit">Submit</button>
+   </form>
+ </div>
+
+
+
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,71 @@
+<%- include("./partials/navs.ejs") %>
+
+<!-- =========  B O O K I N G   ======== -->
+<section>
+<h1 class="login-h1">Book Trip</h1>
+
+<div class="create">
+  <form action="/coded/admin" method="post">
+    <label for="state">From:</label>
+    <select class="state" name="Departure" id="from" required >
+   <option>Select State</option>
+   <option>New York</option>
+   <option>Texas</option>
+   <option>Washinten DC</option>
+   <option>Pheonix</option>
+   <option>Ontario</option>
+   <option>Chinchinati</option>
+   <option>Flourida</option>
+   <option>Ohio</option>
+   <option>Georgia</option>
+   <option>Indiana</option>
+ </select>
+
+ <label for="state">Destination:</label>
+ <select class="state" name="Arrival" id="to" required >
+<option>Select State</option>
+<option>New York</option>
+<option>Texas</option>
+<option>Washinten DC</option>
+<option>Pheonix</option>
+<option>Ontario</option>
+<option>Chinchinati</option>
+<option>Flourida</option>
+<option>Ohio</option>
+<option>Georgia</option>
+<option>Indiana</option>
+</select>
+<div class="price-tag">
+<p>Fee: <b id="price">$85.97</b></p>
+</div>
+<div class="disable-form">
+  <input type="text" name="userId" value="<%= user._id %>">
+  <input type="text" name="userName" value="<%= user.name %>">
+  <input type="text" name="userAddress" value="<%= user.address %>">
+  <input type="text" name="userEmail" value="<%= user.email %>">
+</div>
+<button type="submit" name="submit" id="btn">Book</button>
+  </form>
+</div>
+
+</section>
+
+
+ <script type="text/javascript">
+   const price = document.getElementById("price");
+   const from = document.getElementById("from");
+   const to = document.getElementById("to");
+   const btn = document.getElementById("btn");
+
+if(from.value === "New York"){
+
+} else {
+  price.innerHTML = "Wrong!!!"
+}
+
+
+ </script>
+
+
+
+<%- include("./partials/footer.ejs") %>

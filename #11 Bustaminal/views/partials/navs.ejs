@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+      <title>Bustaminal</title>
+      <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600i,700,800|Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- =========  N A V  B A R  ======== -->
+
+    <div class="navigate">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand" href="/"><h2>Bustaminal</h2></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">About</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/dashboard">Dashboard</a>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Terminal
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="/terminal">U.S</a>
+                 <a class="dropdown-item" href="/terminal">Canada</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="/terminal">Others</a>
+               </div>
+             </li>
+
+           </ul>
+
+
+
+           <% if (user) { %>
+             <div class="H-link nav-item">
+               <a href="/" class="btn-link-1">Welcome, <%= user.name %></a>
+             <button class="btn-link"><a href="/logout">Logout</a></button>
+                </div>
+                <% } else { %>
+            <div class="H-link nav-item">
+                  <a href="/login" class="btn-link-1">Login</a>
+                <button class="btn-link"><a href="/signup">Signup</a></button>
+            </div>
+                <% } %>
+
+
+
+
+
+       </nav>
+    </div>

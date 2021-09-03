@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bustaminal</title>
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600i,700,800|Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+ </head>
+<body>
+
+<!-- =========  N A V  B A R  ======== -->
+
+<div class="navigate">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"><h2>Bustaminal</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coded/admin">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Terminal
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/terminal">U.S</a>
+            <a class="dropdown-item" href="/terminal">Canada</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/terminal">Others</a>
+          </div>
+        </li>
+      </ul>
+
+
+      <% if (user) { %>
+        <div class="H-link">
+          <a href="/" class="btn-link-1">Welcome, <%= user.name %></a>
+        <button class="btn-link"><a href="/logout">Logout</a></button>
+           </div>
+           <% } else { %>
+       <div class="H-link">
+             <a href="/login" class="btn-link-1">Login</a>
+           <button class="btn-link"><a href="/signup">Signup</a></button>
+       </div>
+           <% } %>
+
+
+    </div>
+  </nav>
+</div>
+
+<!-- =========  B O D Y     D E S K T O P  ======== -->
+
+   <section class="body">
+     <div class="body-1">
+       <div class="body-text">
+         <h2>Easy and Fast</h2>
+         <h3>with just a Click on Bustaminal</h3>
+         <h4>putting together the best to make you fill
+           <b>Confortable</b> and <b>Convinent</b></h4>
+       </div>
+       </div>
+
+       <a href="/terminal"><button class="btn">Book a trip now</button></a>
+   </section>
+
+<section class="sec-body">
+ <div class="body-2">
+   <div class="body-txt-2">
+     <h2>When You Need</h2>
+     <h3>The Best Transport System</h3>
+     <h4>With Lorem ipsum dolor sit amet, consectetur
+       adipisicing elit, sed do eiusmod tempor
+       incididunt ut labore et dolore magna aliqua.
+       Ut enim ad minim veniam, quis nostrud
+       exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor
+         in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia d
+          eserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip
+             ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+               cillum dolore eu fugiat nulla pariatur.
+               Excepteur sint occaecat cupidatat non
+               proident, sunt in culpa qui officia d
+               eserunt mollit anim id est laborum.</h4>
+   </div>
+   <img src="/one.svg" alt="...">
+ </div>
+</section>
+
+
+
+
+<section class="trd-body">
+ <div class="body-3">
+   <h2>Why <b>Bustaminal?</b></h2>
+   <h4>Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+       Ut enim ad minim veniam, quis nostrud
+       exercitation ullamco laboris nisi ut
+       aliquip ex ea commodo consequat. Duis
+       aute irure dolor in reprehenderit in
+       voluptate velit esse cillum dolore eu
+       fugiat nulla pariatur. Excepteur sint
+       occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim
+         id est laborum.</h4>
+ </div>
+
+
+ </section>
+
+<div class="award-box">
+ <div class="box">
+   <h2>Reliability</h2>
+   <h3>makes us outstanding</h3>
+   <p>Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit, sed do eiusmod tempor i
+      ncididunt ut labore et dolore magna aliqu
+      a. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo
+       consequat.</p>
+ </div>
+
+ <div class="box">
+   <h2>Compititive</h2>
+   <h3>makes us outstanding</h3>
+   <p>Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit, sed do eiusmod tempor i
+      ncididunt ut labore et dolore magna aliqu
+      a. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo
+       consequat.</p>
+ </div>
+
+ <div class="box">
+   <h2>Eligiblity</h2>
+   <h3>makes us outstanding</h3>
+   <p>Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit, sed do eiusmod tempor i
+      ncididunt ut labore et dolore magna aliqu
+      a. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo
+       consequat.</p>
+ </div>
+
+</div>
+
+
+
+
+<section class="fth-body">
+ <div class="body-fth">
+   <div class="four-txt">
+     <h2>Free Guide On How <br>To Book A Trip</br></h2>
+     <p>Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud
+         exercitation ullamco laboris nisi ut
+         aliquip ex ea commodo consequat. Duis
+         aute irure dolor in reprehenderit in
+         voluptate velit esse cillum dolore eu
+         fugiat nulla pariatur. Excepteur sint
+         occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim
+           id est laborum.
+           Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+               Ut enim ad minim veniam</p>
+               <a href="#">Learn More</a>
+   </div>
+   <div class="four-img">
+     <img src="/three.svg" alt="...">
+   </div>
+ </div>
+
+</section>
+
+
+
+
+<section class="five-body">
+ <div class="body-fiv">
+   <div class="fiv-cont">
+     <img src="/four.svg" alt="...">
+     <h3>Connect drivers and passangers</h3>
+     <p>With Bustaminal, Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit, sed do eiusmod
+         tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis
+           nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequa
+            t.</p>
+   </div>
+
+   <div class="fiv-cont">
+     <img src="/five.svg" alt="...">
+     <h3>Auto Search</h3>
+     <p>With Bustaminal, Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit, sed do eiusmod
+         tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis
+           nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequa
+            t.</p>
+   </div>
+
+   <div class="fiv-cont">
+     <img src="/six.svg" alt="...">
+     <h3>Speed and Time</h3>
+     <p>With Bustaminal, Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit, sed do eiusmod
+         tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis
+           nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequa
+            t.</p>
+   </div>
+
+
+ </div>
+</section>
+
+
+
+
+<section class="six-body">
+ <div class="body-6">
+   <div class="body-txt-6">
+     <h2>When You Need</h2>
+     <h3>The Best Transport System</h3>
+     <h4>With Lorem ipsum dolor sit amet, consectetur
+       adipisicing elit, sed do eiusmod tempor
+       incididunt ut labore et dolore magna aliqua.
+       Ut enim ad minim veniam, quis nostrud
+       exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor
+         in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia d
+          eserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip
+             ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse
+               cillum dolore eu fugiat nulla pariatur.
+               Excepteur sint occaecat cupidatat non
+               proident, sunt in culpa qui officia d
+               eserunt mollit anim id est laborum.</h4>
+             </div>
+             <img src="/one.svg" alt="...">
+ </div>
+</section>
+
+
+
+
+<!-- =========  F O O T E R   ======== -->
+
+
+<footer>
+<div class="foot">
+ <h2>Bustaminal</h2>
+ <div class="foot-list">
+   <div class="f-list">
+     <h4>COMPANY</h4>
+     <li>
+       <a href="#">About</a>
+       <a href="#">Services</a>
+       <a href="#">Case Studies</a>
+       <a href="#">Blog</a>
+     </li>
+     </div>
+
+     <div class="f-list">
+        <h4>ADDITIONAL INFORMATION</h4>
+        <li>
+          <a href="#">Terms of use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Continuous Fow</a>
+        </li>
+        </div>
+
+        <div class="f-list">
+          <h4>CONTACT US</h4>
+          <li>
+            <a href="#">Contact Services</a>
+            <a href="#">Customer Support</a>
+            <a href="#">Request a Demo</a>
+            <a href="#">FAQ</a>
+          </li>
+    </div>
+
+  </div>
+
+  <div class="last-foot">
+    <h4>Have any Question? Call</h4>
+    <h3>(+1) 127 522 7456</h3>
+    <div class="s-icon">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
+ <h5>Copyright &copy; 2021 Bustaminal. All right reserved.</h5>
+</div>
+ </div>
+</footer>
+
+<script src="/jQuery.js"></script>
+<script src="/Bootstrap.js"></script>
+
+   <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+
+
+ </body>
+</html>
+
+
+
+<!-- &copy; -->

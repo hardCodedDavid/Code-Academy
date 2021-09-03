@@ -1,0 +1,338 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const ejs = require('ejs');
+const app = express();
+const Trip = require('./module/trips.js');
+const Booking = require('./module/booking.js');
+const User = require('./module/Users.js');
+const jwt = require('jsonwebtoken');
+const authRoutes = require('./auth/authRoutes.js');
+const cookieParser = require('cookie-parser');
+const { requireAdminAuth, checkAdmin } = require('./Middleware/adminMiddleware');
+const { requireAuth, checkUser } = require('./Middleware/authMiddleware');
+const nodemailer = require('nodemailer');
+// const adminRouter = require('./auth/adminRouter.js');
+// const router = require('./auth/adminRouter.js');
+
+
+// Middleware
+app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+// view engine
+app.set("view engine",  "ejs");
+
+
+// DB
+const dbURI = 'mongodb+srv://Smart:smartboy@cluster0.quoin.mongodb.net/Bustaminal?retryWrites=true&w=majority';
+mongoose.connect(dbURI,  { useNewUrlParser: true,  useUnifiedTopology: true, useCreateIndex: true,})
+.then(() => console.log('MongoDB Connected'))
+.catch((err) => {
+  console.log(err);
+  res.render("Error/404")
+})
+
+
+// GET:
+app.get('*', checkUser);
+
+app.use(authRoutes)
+// app.use(adminBro.options.rootPath, router)
+
+app.get('/', (req, res) => {
+  res.render("index");
+})
+
+
+app.get('/terminal', (req, res) => {
+  Trip.find().sort({ added_date: -1 })
+  .then((result) => {
+    res.render('terminal', { datas: result })
+  })
+  .catch((err) => {
+    res.render("Error/404")
+    console.log(err);
+  })
+})
+
+
+
+
+app.get('/dashboard', requireAuth, async (req, res) => {
+  Booking.find().sort({ date_added: -1 })
+  .then((result) => {
+    res.render('dashboard', { data: result })
+  })
+  .catch((err) => {
+    res.render("Error/404")
+    console.log(err);
+  })
+})
+
+
+
+app.get('/dashboard/detail/:id', requireAuth, (req, res) => {
+  const id = req.params.id
+  Booking.findById(id)
+  .then((result) => {
+    res.render('dashboard-details', { data: result })
+  })
+  .catch((err) => {
+    res.render("Error/404")
+    console.log(err);
+  })
+})
+
+
+app.get('/terminal/detail/:id', requireAuth, (req, res) => {
+  const id = req.params.id
+  Trip.findById(id)
+  .then((result) => {
+    res.render('detail', { trip: result })
+  })
+  .catch((err) => {
+    res.render("Error/404")
+    console.log(err);
+  })
+})
+
+
+
+
+
+
+
+
+app.get('/coded/admin', requireAdminAuth, async (req, res) => {
+  // Booking.find().sort({ date_added: -1 })
+  // .then((result) => {
+    res.render('Admin/admin')
+//   })
+//   .catch((err) => {
+//     // res.render('404');
+//     console.log(err);
+//   })
+//
+})
+
+
+app.get('/coded/added', (req, res) => {
+  res.render("Admin/added");
+})
+
+
+
+app.get('/admin/dashboard/users', requireAuth, async (req, res) => {
+  User.find().sort({ date_added: -1 })
+  .then((result) => {
+    res.render('Admin/Users', { data: result })
+  })
+  .catch((err) => {
+    // res.render('404');
+    console.log(err);
+  })
+})
+
+
+app.get('/admin/dashboard/trips', requireAuth, (req, res) => {
+  Trip.find().sort({ date_added: -1 })
+  .then((result) => {
+    res.render('Admin/Trips', { datas: result })
+  })
+  .catch((err) => {
+    // res.render('404');
+    console.log(err);
+  })
+})
+
+
+
+app.get('/admin/dashboard/booking', requireAuth, (req, res) => {
+  Booking.find().sort({ date_added: -1 })
+  .then((result) => {
+    res.render('Admin/Booked-trip', { data: result })
+  })
+  .catch((err) => {
+    // res.render('404');
+    console.log(err);
+  })
+
+})
+
+app.get('/admin/dashboard/booking/details/:id', requireAuth, async (req, res) => {
+const id = req.params.id;
+  Booking.findById(id)
+  .then((result) => {
+    res.render('Admin/booking-details', { data: result })
+  })
+  .catch((err) => {
+    // res.render('404');
+    console.log(err);
+  })
+
+})
+
+
+app.get('*', (req, res) => {
+  res.render("Error/404")
+});
+
+
+
+
+
+
+
+// P O S T    R E Q U E S
+
+app.post('/terminal', (req, res) => {
+  const trip = new Trip (req.body)
+  trip.save()
+  .then((result) => {
+    res.redirect('/admin/dashboard/trips')
+  })
+  .catch((err) => {
+  res.render("Error/404")
+    console.log(err);
+  })
+})
+
+
+
+
+app.post('/coded/admin', async (req, res) => {
+  const book = new Booking (req.body)
+   book.save()
+  .then((result) => {
+    // Redirecting User
+    res.redirect('/dashboard');
+
+
+    // Sending an Email to to Admin
+
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'sannidavidsmart@gmail.com',
+        pass: 'smartboy001'
+      }
+    });
+
+    var mailOptions = {
+      from: 'sannidavidsmart@gmail.com',
+      to: 'sandaiv001@gmail.com',
+      subject: 'A user just booked a trip',
+      html: '<h1 style="text-align: center; font-weight: 300;">Booking Details</h1> Booking Id : <h3 style=" font-weight: 500;">' + book._id + '</h3>     Station : <h3 style=" font-weight: 500;">' + book.Station + '</h3>      From : <h3 style=" font-weight: 500;">' + book.Departure + '</h3>      Destination : <h3 style=" font-weight: 500;">' + book.Arrival + '</h3>      Address : <h3 style=" font-weight: 500;">' + book.Address + '</h3>      Date : <h3 style=" font-weight: 500;">' + book.Date + '</h3>    Price : <h3 style=" font-weight: 500;">' + book.Price + '</h3>       <h2 style="text-align: center; font-weight: 300;">User Details</h2>     Id : <h3 style=" font-weight: 500; padding: 10px; background-color: #ddd;">' + book.userId + '</h3>      Name : <h3 style=" font-weight: 500; padding: 10px; background-color: #ddd;">' + book.userName + '</h3>     Address : <h3 style=" font-weight: 500; padding: 10px; background-color: #ddd;">' + book.userAddress + '</h3>    Email : <h3 style=" font-weight: 500; padding: 10px; background-color: #ddd;">' + book.userEmail + '</h3>        Booking Date : <h3 style=" font-weight: 500; padding: 10px; background-color: #ddd;">' + book.date_added + '</h3>'
+    };
+
+    transporter.sendMail(mailOptions, (err, data) => {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log("Email Sent:" + data.response);
+      }
+    });
+
+
+
+
+    // Sending an Email to the User
+
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'sannidavidsmart@gmail.com',
+        pass: 'smartboy001'
+      }
+    });
+
+    var mailOptions = {
+      from: 'sannidavidsmart@gmail.com',
+      to: book.userEmail,
+      subject: 'You Just Booked A Trip',
+      html: '<h1 style="text-align: center; font-weight: 300;">Booking Details</h1> Booking Id : <h3 style=" font-weight: 500;">' + book._id + '</h3>     Station : <h3 style=" font-weight: 500;">' + book.Station + '</h3>      From : <h3 style=" font-weight: 500;">' + book.Departure + '</h3>      Destination : <h3 style=" font-weight: 500;">' + book.Arrival + '</h3>      Address : <h3 style=" font-weight: 500;">' + book.Address + '</h3>      Date : <h3 style=" font-weight: 500;">' + book.Date + '</h3>    Price : <h3 style=" font-weight: 500;">' + book.Price + '</h3>'
+    };
+
+    transporter.sendMail(mailOptions, (err, data) => {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log("Email Sent:" + data.response);
+      }
+    });
+
+
+
+    console.log(book);
+    // alert("you have just booked a trip");
+  })
+  .catch((err) => {
+    // res.render('404');
+    console.log(err);
+  })
+})
+
+
+
+
+
+// D E L E T E    R E Q U E S T
+
+app.post('/delete/trip', (req, res) => {
+  const id = req.body.Delete
+  const body = req.body
+    Trip.findByIdAndRemove(id)
+    .then(result => {
+            res.redirect('/admin/terminal');
+            console.log(body + " " + "was deleted successfully");
+        })
+        .catch(err => {
+            console.log(err)
+        })
+});
+
+
+app.post('/delete/booking', (req, res) => {
+  const id = req.body.Delete
+  const body = req.body
+    Booking.findByIdAndRemove(id)
+    .then(result => {
+            res.redirect('/dashboard');
+            console.log(body + " " + "was deleted successfully");
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+
+
+
+
+
+
+
+
+
+// C O O K I E S
+
+// set cookies
+app.get('/set-cookies', (req, res) => {
+  res.cookie('newUser', false);
+  res.cookie('isEmployee', true, { maxAge: 1000 * 60 * 60 * 24 })
+});
+
+// read cookies
+app.get('/read-cookies', (req, res) => {
+  const cookies = req.cookies
+  console.log(cookies);
+
+  res.json(cookies);
+})
+
+
+
+const port = process.env.PORT || 3000;
+app.listen(port, console.log("app listen on port" +" "+ port))

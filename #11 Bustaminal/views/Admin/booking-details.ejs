@@ -1,0 +1,52 @@
+
+
+ <%- include("../partials/navs.ejs") %>
+
+
+
+
+ <!-- =========  D E T A I L S  ======== -->
+  <section>
+   <div class="details">
+
+
+     <div class="full-detail">
+       <div class="left-detail">
+         <h1><%= data.userName %></h1>
+         <h1 style="font-weight: 200; font-size: 20px;"><%= data.userEmail %></h1>
+           <h2 name="Departure" >from: <b><%= data.Departure %></b></h2>
+           <h2 name="Arrival" >Destination: <b><%= data.Arrival %></h2>
+           <p>Date: <b><%= data.Date %></b></p>
+           <p>Takeoff time: <b id="date-range"></b></p>
+           <!-- <p id="date-range"></p> -->
+       </div>
+       <div class="right-detail">
+          <p>Users address:  <%= data.userAddress %><br></p>
+         <h4><%= data.price %></h4>
+         <div class="btn-detail">
+         </div>
+       </div>
+     </div>
+    </div>
+  </section>
+
+
+
+
+   <script src="/moment.js"></script>
+
+   <script type="text/javascript">
+        const displayDate = document.getElementById("date-range");
+        const m = moment();
+        const currentDate = moment('<%= data.Date %>');
+        const date = currentDate.fromNow();
+         const format = currentDate.format('LT')
+
+ displayDate.innerHTML = date + ' ' + format;
+
+
+ </script>
+
+
+
+ <%- include("../partials/footer.ejs") %>

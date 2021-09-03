@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+      <title>Bustaminal</title>
+      <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600i,700,800|Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- =========  N A V  B A R  ======== -->
+
+    <div class="navigate">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand" href="/"><h2>Bustaminal</h2></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">About</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/dashboard">Dashboard</a>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Terminal
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="/admin/terminal">U.S</a>
+                 <a class="dropdown-item" href="/admin/terminal">Canada</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="/terminal">Others</a>
+               </div>
+             </li>
+
+           </ul>
+
+
+
+           <% if (user) { %>
+             <div class="H-link nav-item">
+               <a href="/" class="btn-link-1">Welcome, <%= user.name %></a>
+             <button class="btn-link"><a href="/logout">Logout</a></button>
+                </div>
+                <% } else { %>
+            <div class="H-link nav-item">
+                  <a href="/login" class="btn-link-1">Login</a>
+                <button class="btn-link"><a href="/signup">Signup</a></button>
+            </div>
+                <% } %>
+
+
+
+
+
+       </nav>
+    </div>
+
+
+<!-- =========  A D M I N I S T R A T O R  ======== -->
+
+<section>
+<div class="admin-1">
+<h1 class="admin-txt"><b>Admin Panel</h1>
+  <a href="/adimn/logout"><button class="btn admin">Logout</button></a>
+<div class="add">
+</div>
+
+
+
+
+
+<div class="sec-1">
+<a href="#">
+  <div class="A-1">
+    <h2>14</h2>
+    <p>No of Users</p>
+  </div>
+</a>
+
+<a href="#">
+  <div class="A-1">
+    <h2>12</h2>
+    <p>No of Booked Trips</p>
+  </div>
+</a>
+
+
+<a href="#">
+  <div class="A-1">
+    <h2>26</h2>
+    <p>No of Trips</p>
+  </div>
+</a>
+
+
+</div>
+</div>
+</section>
+
+
+<section>
+<div class="booked">
+
+<a href="/admin/dashboard/users">
+<div class="trip">
+  <div class="left-trip">
+    <p>Users</p>
+  </div>
+  <div class="right-trip">
+    <i class="fa fa-user fa-2x"  aria-hidden="true"></i>
+  </div>
+</div>
+</a>
+
+<a href="/admin/dashboard/trips">
+<div class="trip">
+  <div class="left-trip">
+    <p>Trips</p>
+  </div>
+  <div class="right-trip">
+  <a href="#" ><i class="fa fa-plane fa-3x" aria-hidden="true"></i></a>
+  </div>
+</div>
+</a>
+
+<a href="/admin/dashboard/booking">
+<div class="trip">
+  <div class="left-trip">
+    <p>Booked Trips</p>
+  </div>
+  <div class="right-trip">
+  <a href="#"><i class="fa fa-credit-card fa-3x" aria-hidden="true"></i></a>
+  </div>
+</div>
+</a>
+
+</div>
+</section>
+
+
+<%- include("../partials/footer.ejs") %>

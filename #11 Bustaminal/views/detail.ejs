@@ -1,0 +1,64 @@
+
+
+<%- include("./partials/navs.ejs") %>
+
+
+
+
+<!-- =========  D E T A I L S  ======== -->
+<section>
+  <div class="details">
+
+
+    <div class="full-detail">
+      <div class="left-detail">
+        <h1><%= trip.Station %></h1>
+        <h2 name="Departure" >from: <b><%= trip.From %></b></h2>
+        <h2 name="Arrival" >Destination: <b><%= trip.Destination %></h2>
+          <p>Date: <b><%= trip.Date %></b></p>
+          <p>Takeoff time: <b id="date-range"></b></p>
+          <!-- <p id="date-range"></p> -->
+      </div>
+      <div class="right-detail">
+        <p>Address:  <%= trip.Address %><br></p>
+        <h4><%= trip.Price %></h4>
+        <div class="btn-detail">
+    <form class="disable-form" action="/coded/admin" method="post">
+      <input type="text" name="Station" value="<%= trip.Station %>">
+      <input type="text" name="Departure" value="<%= trip.From %>">
+      <input type="text" name="Arrival" value="<%= trip.Destination %>">
+      <input type="text" name="Address" value="<%= trip.Address %>">
+      <input type="text" name="Date" value="<%= trip.Date %>">
+      <input type="text" name="Price" value="<%= trip.Price %>">
+      <input type="text" name="userId" value="<%= user._id %>">
+      <input type="text" name="userName" value="<%= user.name %>">
+      <input type="text" name="userAddress" value="<%= user.address %>">
+      <input type="text" name="userEmail" value="<%= user.email %>">
+            <button type="submit" name="submit" class="book">Book Trip</button>
+</form>
+        </div>
+      </div>
+    </div>
+   </div>
+ </section>
+
+
+
+
+ <script src="/moment.js"></script>
+
+  <script type="text/javascript">
+       const displayDate = document.getElementById("date-range");
+       const m = moment();
+       const currentDate = moment('<%= trip.Date %>');
+       const date = currentDate.fromNow();
+       const format = currentDate.format('LT')
+
+displayDate.innerHTML = date + ' ' + format;
+
+
+</script>
+
+
+
+<%- include("./partials/footer.ejs") %>

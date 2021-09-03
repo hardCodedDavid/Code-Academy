@@ -1,0 +1,104 @@
+
+<%- include("./partials/navs.ejs") %>
+
+
+
+<!-- =========   D A S H B O A R D  ======== -->
+
+<section>
+
+<div class="dashboard">
+<div class="dashboard-top">
+  <div class="dash-text">
+    <h2>Dashboard</h2>
+  </div>
+  <div class="dash-body">
+    <img src="../logo.png" alt="">
+    <h3><%= user.name %></h3>
+    <h4><%= user.email %></h4>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section>
+<div class="notification">
+<div class="all-note">
+  <div class="first-note">
+    <h3>4</h3>
+    <h5>Pending Trip</h5>
+  </div>
+  <div class="secont-note">
+    <h3>4</h3>
+    <h5>Booked Trip</h5>
+  </div>
+  <div class="third-note">
+    <h3>1</h3>
+    <h5>Missed Trip</h5>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========  T R I P S   ======== -->
+<section>
+<div class="trips" style="margin: 10px 15px 20px 15px;">
+
+
+
+<% if(data.length > 0){ %>
+    <% data.forEach(datas => { %>
+      <% let myData =  datas.userId == user._id %>
+      <% if(myData){ %>
+
+
+     <div class="single-terminal" style="border-radius: 10px;">
+       <div class="left-terminal">
+        <h1><%= datas.Departure %> - <%= datas.Arrival %></h1>
+        <h4><%= datas.Date %></h4>
+      </div>
+      <div class="right-terminal">
+        <h1><%= datas.Station %></h1>
+        <h4><%= datas.Price %></h4>
+        <a href="/dashboard/detail/<%= datas._id %>"><button class="btn" style="padding: 10px 20px 10px 20px; margin: 0px; font-size: 15px; float: right;">view</button></a>
+      </div>
+     </div>
+
+
+
+
+  <% } else { %>
+
+  <% } %>
+    <% }) %>
+  <% } else { %>
+
+  <% } %>
+
+
+</div>
+</section>
+
+
+
+
+<%- include("./partials/footer.ejs") %>
