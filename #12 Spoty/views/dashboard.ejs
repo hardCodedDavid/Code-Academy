@@ -1,0 +1,73 @@
+
+<%- include('./partials/header.ejs') %>
+
+
+
+
+</header>
+
+
+<div class="dashboard">
+  <div class="dashboard__header">
+    <div class="dash-text">
+      <h2>Dashboard</h2>
+    </div>
+    <div class="dash-content">
+      <img src="images/DP.jpg" alt="...">
+      <!-- <h3>Sanni</h3> -->
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <a href="#" style="top:20px;left:60px;"><i class="fa fa-user-edit fa-2x" aria-hidden="true"></i></a> -->
+<div class="profile-container">
+
+  <div class="edit-icon">
+    <a href="/user/edit"><i class="fa fa-user-edit fa-1x" aria-hidden="true"></i></a>
+  </div>
+
+<div class="content">
+    <a href="#"><i class="fa fa-user fa-4x" aria-hidden="true"></i></a>
+  <h3><%= user.firstName %> <%= user.lastName %></h3>
+  <h4><%= user.email %></h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit et cupiditate deleniti.</p>
+</div>
+</div>
+
+
+<div class="dash-info">
+<div class="all-info">
+<div class="cart">
+  <a href="#"><i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i></a>
+
+  <% if(session.cart) { %>
+          <p><%= session.cart.totalQty %></p>
+              <% } else { %>
+              <p>0</p>
+              <% } %>
+
+</div>
+
+<div class="cart">
+  <a href="#"><i class="fa fa-credit-card fa-3x" aria-hidden="true"></i></a>
+  <p>1</p>
+</div>
+
+<div class="cart">
+  <a href="#"><i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i></a>
+  <p>6</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<%- include('./partials/footer.ejs') %>

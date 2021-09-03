@@ -1,0 +1,508 @@
+
+<%- include('./partials/header.ejs') %>
+
+
+
+
+      <div class="hero">
+        <div class="glide" id="glide_1">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide">
+                <div class="hero__center">
+                  <div class="hero__left">
+                    <span class="">Get the latest deals</span>
+                    <h1 class="">FOR ABOUT <b style="color: rgba(245, 158, 11); font-size: 5rem;">40%</b> OFF</h1>
+                    <p>For all Apple products with your first order</p>
+                    <a href="/store"><button class="hero__btn">SHOP NOW</button></a>
+                  </div>
+                  <div class="hero__right">
+                    <div class="hero__img-container">
+                      <img class="banner_01" src="/images/banner_01.png" alt="banner2" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="hero__center">
+                  <div class="hero__left">
+                    <span>Monthly offer deals</span>
+                  <h1 class="">FOR ABOUT <b style="color: rgba(245, 158, 11); font-size: 5rem;">60%</b> OFF</h1>
+                    <p>With your first order on Spoty</p>
+                    <a href="/store"><button class="hero__btn">SHOP NOW</button></a>
+                  </div>
+                  <div class="hero__right">
+                    <img class="banner_02" src="/images/banner_02.png" alt="banner2" />
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="hero__center">
+                  <div class="hero__left">
+                    <span>Latest Products for 2021</span>
+                    <h1 class="">FOR ABOUT <b style="color: rgba(245, 158, 11); font-size: 5rem;">25%</b> OFF</h1>
+                    <p>For your first <b style="color: rgba(245, 158, 11);">3</b> orders</p>
+                    <a href="/store"><button class="hero__btn">SHOP NOW</button></a>
+                  </div>
+                  <div class="hero__right">
+                    <img class="banner_02" src="/images/banner_03.png" alt="banner2" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+          </div>
+
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+
+
+
+    <!-- Main -->
+    <main id="main">
+      <div class="container">
+        <!-- Collection -->
+        <section id="collection" class="section collection">
+          <div class="collection__container">
+            <div class="collection__box">
+              <div class="img__container">
+                <img class="collection_02" src="/images/collection_02.png" alt="">
+              </div>
+              <div class="collection__content">
+                <div class="collection__data">
+                  <span>Get new designs</span>
+                  <h1>IPHONE</h1>
+                  <a href="#">SHOP NOW</a>
+                </div>
+              </div>
+            </div>
+            <div class="collection__box">
+              <div class="img__container">
+                <img class="collection_01" src="/images/collection_01.png" alt="">
+              </div>
+              <div class="collection__content">
+                <div class="collection__data">
+                  <span>Phone Device Preset</span>
+                  <h1>SMARTWATCH</h1>
+                  <a href="#">SHOP NOW</a>
+                </div>
+              </div>
+            </div>
+        </section>
+
+
+
+
+
+
+</div>
+
+        <div class="recommended">
+          <h3>Latest Product</h3>
+        </div>
+
+<div class="main-product">
+
+            <% products.length = 4  %>
+             <% products.forEach(product => { %>
+          <div class="single-product" id="myUL">
+            <a href="/products/<%=product._id%>" style="color: inherit;" id="li">
+            <div class="product-img">
+              <img src="<%=product.imagePath%>" alt="product">
+            </div>
+          <div class="product-footer">
+              <h3 style="margin: 10px 10px;" id="title"><%= product.title %></h3>
+              <div class="rating" style="transform: scale(0.7);">
+                <svg>
+                  <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                </svg>
+                <svg>
+                  <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                </svg>
+                <svg>
+                  <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                </svg>
+                <svg>
+                  <a href="#"><i class="fa fa-star-half" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                </svg>
+                <svg>
+                  <a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
+                </svg>
+              </div>
+              <div class="product__price">
+                <h4 style="margin: 10px 10px;">$ <%= product.price %> </h4>
+              </div>
+              <a href="/add-to-cart/<%= product._id %>"><button type="submit" class="product__btn">Add To Cart</button></a>
+            </div>
+            </a>
+          </div>
+          <% }) %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+              <div class="collection__box single">
+                <div class="img__container">
+                  <img class="collection_02" src="/images/collection_03.png" alt="">
+                </div>
+                <div class="collection__content">
+                  <div class="collection__data">
+                    <span>Samsung Galaxy S20 Ultra</span>
+                    <h1 style="color: rgba(245, 158, 11);">$ 1,200</h1>
+                    <a href="#">SHOP NOW</a>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+              <section>
+                <div class="recommended">
+                  <h3>Recommended</h3>
+                </div>
+
+                <div class="main-product">
+
+                            <% products.length = 4  %>
+                             <% products.forEach(product => { %>
+                          <div class="single-product" id="myUL">
+                            <a href="/products/<%=product._id%>" style="color: inherit;" id="li">
+                            <div class="product-img">
+                              <img src="<%=product.imagePath%>" alt="product">
+                            </div>
+                          <div class="product-footer">
+                              <h3 style="margin: 10px 10px;" id="title"><%= product.title %></h3>
+                              <div class="rating" style="transform: scale(0.7);">
+                                <svg>
+                                  <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                                </svg>
+                                <svg>
+                                  <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                                </svg>
+                                <svg>
+                                  <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                                </svg>
+                                <svg>
+                                  <a href="#"><i class="fa fa-star-half" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+                                </svg>
+                                <svg>
+                                  <a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                </svg>
+                              </div>
+                              <div class="product__price">
+                                <h4 style="margin: 10px 10px;">$ <%= product.price %> </h4>
+                              </div>
+                              <a href="/add-to-cart/<%= product._id %>"><button type="submit" class="product__btn">Add To Cart</button></a>
+                            </div>
+                            </a>
+                          </div>
+                          <% }) %>
+
+                </div>
+              </section>
+
+
+
+
+
+
+
+
+
+
+              <!-- Testimonial Section -->
+              <section class="section testimonial" id="testimonial">
+                <div class="testimonial__container">
+                  <div class="glide" id="glide_4">
+                    <div class="glide__track" data-glide-el="track">
+                      <ul class="glide__slides">
+                        <li class="glide__slide">
+                          <div class="testimonial__box">
+                            <div class="client__image">
+                              <img src="/images/DP.jpg" alt="profile">
+                            </div>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.ipsum dolor sit amet consectetur adipisicing
+                              elit. Recusandae fuga hic nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.</p>
+                            <div class="client__info">
+                              <h3>John Doe</h3>
+                              <span>Customer</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="glide__slide">
+                          <div class="testimonial__box">
+                            <div class="client__image">
+                              <img src="/images/profile2.jpg" alt="profile">
+                            </div>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic nesciunt tempore
+                              quibusdam consequatur
+                              eligendi unde officia ex quae.ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic
+                              nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.adipisicing elit. Recusandae fuga hic
+                              nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.</p>
+                            <div class="client__info">
+                              <h3>Kate Smith</h3>
+                              <span>Customer</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="glide__slide">
+                          <div class="testimonial__box">
+                            <div class="client__image">
+                              <img src="/images/profile3.jpg" alt="profile">
+                            </div>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic nesciunt tempore
+                              quibusdam consequatur
+                              eligendi unde officia ex quae.ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic
+                              nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.adipisicing elit. Recusandae fuga hic
+                              nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.</p>
+                            <div class="client__info">
+                              <h3>Bary Joe</h3>
+                              <span>Customer</span>
+                            </div>
+                          </div>
+
+                        </li>
+                        <li class="glide__slide">
+                          <div class="testimonial__box">
+                            <div class="client__image">
+                              <img src="/images/profile4.jpg" alt="">
+                            </div>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic nesciunt tempore
+                              quibusdam consequatur
+                              eligendi unde officia ex quae.adipisicing elit. Recusandae fuga hic
+                              nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.
+                              hic
+                              nesciunt tempore
+                              quibusdam consequatur eligendi unde officia ex quae.</p>
+                            <div class="client__info">
+                              <h3>David Andrewson</h3>
+                              <span>Customer</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                      <button class="glide__bullet" data-glide-dir="=0"></button>
+                      <button class="glide__bullet" data-glide-dir="=1"></button>
+                      <button class="glide__bullet" data-glide-dir="=2"></button>
+                      <button class="glide__bullet" data-glide-dir="=3"></button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <!-- Facility Section -->
+    <div class="facility">
+      <div class="facility-content">
+
+        <div class="single-facility">
+          <a href="#" ><i class="fa fa-plane fa-3x" aria-hidden="true"></i></a>
+          <p>Free Shipping World Wide</p>
+        </div>
+
+        <div class="single-facility">
+          <a href="#" ><i class="fa fa-edit fa-3x" aria-hidden="true"></i></a>
+          <p>100% Money back Guarantee</p>
+        </div>
+
+        <div class="single-facility">
+          <a href="#"><i class="fa fa-credit-card fa-3x" aria-hidden="true"></i></a>
+          <p>Many Payment Gateways</p>
+        </div>
+
+        <div class="single-facility">
+          <a href="#"><i class="fa fa-headphones fa-3x" aria-hidden="true"></i></a>
+          <p>24/7 Online Support</p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--New Section  -->
+<section class="section news" id="news">
+  <div class="container">
+    <div class="title__container">
+      <div class="section__titles">
+        <div class="section__title active">
+          <h1 class="primary__title">Blog</h1>
+        </div>
+      </div>
+    </div>
+    <div class="news__container">
+      <div class="glide" id="glide_5">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="new__card">
+                <div class="card__header">
+                  <img src="/images/news1.png" alt="">
+                </div>
+                <div class="card__footer">
+                  <h3>Spoty Online Shopping for Devices</h3>
+                  <span>By Admin</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
+                    provident rem sed minus natus unde vel modi!</p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="new__card">
+                <div class="card__header">
+                  <!-- <img src="/images/news2.jpg" alt=""> -->
+                  <img src="/images/news1.png" alt="">
+                </div>
+                <div class="card__footer">
+                  <h3>Shopping With Free Shipping</h3>
+                  <span>By Admin</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
+                    provident rem sed minus natus unde vel modi!</p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="new__card">
+                <div class="card__header">
+                  <img src="/images/news1.png" alt="">
+                </div>
+                <div class="card__footer">
+                  <h3>Spoty with $300,000 USD Monthly Revenue</h3>
+                  <span>By Admin</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
+                    provident rem sed minus natus unde vel modi!</p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="new__card">
+                <div class="card__header">
+                  <img src="/images/news1.png" alt="">
+                </div>
+                <div class="card__footer">
+                  <h3>Most Popular Online Shopping in Africa</h3>
+                  <span>By Admin</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
+                    provident rem sed minus natus unde vel modi!</p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="new__card">
+                <div class="card__header">
+                  <img src="/images/news1.png" alt="">
+                </div>
+                <div class="card__footer">
+                  <h3>This is for development purpose only</h3>
+                  <span>By Admin</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
+                    provident rem sed minus natus unde vel modi!</p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- NewsLetter -->
+<section class="section newsletter" id="contact">
+  <div class="container">
+    <div class="newsletter__content">
+      <div class="newsletter__data">
+        <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+        <p>A short sentence describing what someone will receive by subscribing</p>
+      </div>
+      <form action="#">
+        <input type="email" placeholder="Enter your email address" class="newsletter__email">
+        <a class="newsletter__link" href="#">subscribe</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+
+
+
+<%- include('./partials/footer.ejs') %>

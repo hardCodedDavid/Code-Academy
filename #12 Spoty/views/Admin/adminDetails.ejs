@@ -1,0 +1,62 @@
+
+<%- include('../partials/header.ejs') %>
+
+
+
+
+</header>
+
+
+<div class="dashboard">
+  <div class="dashboard__header">
+    <div class="dash-text">
+      <h2>Admin Dashboard</h2>
+    </div>
+    <div class="dash-content">
+      <img src="/images/DP.jpg" alt="...">
+      <!-- <h3>Sanni</h3> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<section>
+  <div class="full-details">
+    <div class="details-content">
+      <div class="details-body">
+        <h3>First Name:</h3>
+        <p><b><%= userDetails.firstName %></b></p>
+      </div>
+
+      <div class="details-body">
+        <h3>last Name:</h3>
+        <p><b><%= userDetails.lastName %></b></p>
+      </div>
+
+      <div class="details-body">
+        <h3>Email:</h3>
+        <p><b><%= userDetails.email %></b></p>
+      </div>
+
+      <div class="details-body">
+        <h3>Country:</h3>
+        <p><b><%= userDetails.country %></b></p>
+      </div>
+
+      <div class="details-body">
+        <h3>Created-At:</h3>
+        <p><b><%= userDetails.createdAt %></b></p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,88 @@
+<%- include('./partials/header.ejs') %>
+
+
+  </header>
+
+
+
+
+  <section>
+    <!-- <div class="product"> -->
+    <div class="recommended">
+      <h3></h3>
+    </div>
+      <div class="main-product">
+
+        <% if(products.length > 0){ %>
+           <% products.forEach(product => { %>
+        <div class="single-product">
+          <a href="/products/<%=product._id%>" style="color: inherit;" id="li">
+          <div class="product-img">
+            <img src="<%=product.imagePath%>" alt="product">
+          </div>
+        <div class="product-footer">
+            <h3 style="margin: 10px 10px;" id="title"><%= product.title %></h3>
+            <div class="rating" style="transform: scale(0.7);">
+              <svg>
+                <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+              </svg>
+              <svg>
+                <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+              </svg>
+              <svg>
+                <a href="#"><i class="fa fa-star" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+              </svg>
+              <svg>
+                <a href="#"><i class="fa fa-star-half" aria-hidden="true" style="color: rgba(245, 158, 11);"></i></a>
+              </svg>
+              <svg>
+                <a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
+              </svg>
+            </div>
+            <div class="product__price">
+              <h4 style="margin: 10px 10px;">$ <%= product.price %> </h4>
+            </div>
+            <a href="/add-to-cart/<%= product._id %>"><button type="submit" class="product__btn">Add To Cart</button></a>
+          </div>
+          </a>
+        </div>
+        <% }) %>
+ <% } else { %>
+        <h2 style="padding: 40px; text-align: center;">There are no product available...</h2>
+  <% } %>
+
+
+
+
+    </div>
+  </section>
+
+
+
+  <!-- <div class="popup hide__popup">
+    <div class="popup__content">
+      <div class="popup__close">
+        <svg>
+          <a href="#"><i class="fa fa-times fa-lg" aria-hidden="true" style="color: #ddd;"></i></a>
+        </svg>
+      </div>
+      <div class="popup__left">
+        <div class="popup-img__container">
+          <img class="popup__img" src="images/popup.jpg" alt="popup">
+        </div>
+      </div>
+      <div class="popup__right">
+        <div class="right__content">
+          <h1>Get Discount <span>30%</span> Off</h1>
+          <p>Sign up to our newsletter and save up to 30% off for the first 3 purchase.
+          </p>
+          <form action="#">
+            <input type="email" placeholder="Enter your email..." class="popup__form">
+            <a href="#">Subscribe</a>
+          </form>
+        </div>
+      </div>
+    </div> -->
+
+
+<%- include('./partials/footer.ejs') %>

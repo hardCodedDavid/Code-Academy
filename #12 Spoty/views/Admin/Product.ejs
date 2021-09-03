@@ -1,0 +1,70 @@
+
+<%- include('../partials/header.ejs') %>
+
+
+
+
+</header>
+
+
+<div class="dashboard">
+  <div class="dashboard__header">
+    <div class="dash-text">
+      <h2>Admin Dashboard</h2>
+    </div>
+    <div class="dash-content">
+      <img style="width: 50px;" src="/images/icon.png" alt="...">
+      <!-- <h3>Sanni</h3> -->
+    </div>
+  </div>
+</div>
+
+
+<section>
+  <div class="List">
+
+
+    <div class="list-txt">
+      <h2>Product List <span id="cart__total" style="padding: 5px 10px 5px 10px"><%= products.length %></span>  <a href="/admin-dashboard/products/add-products" style="color: rgba(245, 158, 11); padding: 10px;"><i class="fa fa-pen-square fa-1x" aria-hidden="true"></i></a></h2>
+
+    </div>
+
+
+  <div class="lis-content">
+
+    <% if( products.length > 0 ){ %>
+       <% products.forEach(product => { %>
+<a href="/admin-dashboard/products/details/<%= product._id %>">
+    <div class="cont-txt">
+      <h2 style="margin-right: 20px; width: 100%;"><%= product.title %></h2>
+      <p style="overflow: hidden; max-height: 60px; padding: 5px;" ><%= product.description %></p>
+      <a href="/admin-dashboard/products/edit-products/<%= product._id %>"><i class="fa fa-edit fa-2x" aria-hidden="true"></i></a>
+<form action="/delete-product" method="POST">
+        <input type="hidden" name="Delete" value="<%= product._id %>">
+       <button class="btn" type="submit" style="padding: 10px; margin: 0px; font-size: 13px; float: right;">Delete</button>
+</form>
+    </div>
+</a>
+
+    <% }) %>
+    <% } else { %>
+    <h2 style="padding: 40px; text-align: center;">There are no Products available...</h2>
+    <% } %>
+
+
+
+
+        </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

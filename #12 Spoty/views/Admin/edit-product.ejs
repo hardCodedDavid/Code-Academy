@@ -1,0 +1,37 @@
+<%- include('../partials/header.ejs') %>
+
+
+
+</header>
+
+
+
+<!-- ===========  A D D   P R O D U C T    F O R M    ============ -->
+
+<section>
+<div class="signup">
+  <h2>Add Product</h2>
+<form class="signup__form" method="POST" action="/edit-product/<%= productDetails._id %>">
+  <label>Product Tite:</label>
+     <input type="text" name="title" required value="<%= productDetails.title %>" >
+  <label>Price:</label>
+     <input type="text" name="price" required value="<%= productDetails.price %>" >
+  <label>Description:</label>
+     <textarea name="description" rows="8" cols="80" required ><%= productDetails.description %></textarea>
+  <label>Brand:</label>
+     <input type="text" name="brand" required value="<%= productDetails.brand %>">
+  <label>Product Type:</label>
+     <input type="text" name="productType" required value="<%= productDetails.productType %>">
+  <label>Product Code:</label>
+     <input type="text" name="productCode" required value="<%= productDetails.productCode %>" >
+ <label for="homeAddress">Image:</label>
+  <input type="text" name="imagePath" value="<%= productDetails.imagePath %>">
+
+  <button type="submit" name="submit">Edit Product</button>
+</form>
+</div>
+</section>
+
+
+
+<%- include('../partials/footer.ejs') %>

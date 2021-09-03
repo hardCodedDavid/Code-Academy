@@ -1,0 +1,76 @@
+<%- include('./partials/header.ejs') %>
+
+
+
+
+
+<div class="cart-details" id="cart">
+<div class="added-cart">
+
+  <% if (cart != null && !cart.paid ) { %>
+
+
+<div class="cart-txt">
+  <div class="cart-txt-h2">
+      <h2>Cart</h2>
+  </div>
+  <div class="circle-num">
+    <% if(session.cart) { %>
+          <h2>  <%= session.cart.totalQty %> </h2>
+              <% } else { %>
+              <h2>0</h2>
+              <% } %>
+  </div>
+</div>
+
+<% products.forEach( product => { %> <% if(product != null) {%>
+
+<a href="/products/<%=product._id%>" class="product-link">
+<div class="cart-product">
+  <div class="product-img">
+    <img src="<%=product.imagePath%>" alt="...">
+  </div>
+  <div class="product-info">
+    <h2><%= product.title %></h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit et cupiditate deleniti.</p>
+    <h3>$ <%= product.price %></h3>
+    <div class="qty">
+      <h4>Qty</h4>
+    <input type="number" name="Qty" value="<%= product.qty %>">
+    <a href="/reduce/<%=product._id%>" class="cart-buy">remove from cart</a>
+    </div>
+  </div>
+</div>
+</a>
+
+
+       <% } %> <% }) %>
+        <div class="total-cost">
+          <h2>Total: <b>$ <%= cart.totalCost %></b></h2>
+        </div>
+        <div class="checkout">
+          <form action="/pay" method="post">
+              <input type="submit" value="Checkout via PayPal" class="checkout-buy" >
+            </form>
+
+        </div>
+ <% } else { %>
+
+ <div class="row text-center">
+   <div class="empty-cart">
+     <h2>No items in the cart</h2>
+   </div>
+ </div>
+
+<% } %>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<%- include('./partials/footer.ejs') %>

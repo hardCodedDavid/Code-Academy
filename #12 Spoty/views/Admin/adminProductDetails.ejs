@@ -1,0 +1,67 @@
+
+<%- include('../partials/header.ejs') %>
+
+
+
+
+</header>
+
+
+<div class="dashboard">
+  <div class="dashboard__header">
+    <div class="dash-text">
+      <h2>Admin Dashboard</h2>
+    </div>
+    <div class="dash-content">
+      <img src="/images/DP.jpg" alt="...">
+      <!-- <h3>Sanni</h3> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<section>
+  <div class="full-details">
+    <div class="details-content">
+      <div class="details-body">
+        <h3>Product Title:</h3>
+        <p><b><%= productDetails.title %></b></p>
+      </div>
+
+      <div class="details-body">
+        <h3>Product Code:</h3>
+        <p><b><%= productDetails.productCode %></b></p>
+      </div>
+
+      <div class="details-body">
+        <h3>Description:</h3>
+        <h6><%= productDetails.description %></h6>
+      </div>
+
+      <div class="details-body">
+        <h3>Product Image:</h3>
+        <img src="<%= productDetails.imagePath %>" alt="IPhone XS Max">
+      </div>
+
+      <div class="details-body">
+        <h3>Price:</h3>
+        <p><b>$ <%= productDetails.price %></b></p>
+      </div>
+
+      <div class="details-body">
+        <h3>Created-At:</h3>
+        <p><b><%= productDetails.createdAt %></b></p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

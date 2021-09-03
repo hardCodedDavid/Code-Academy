@@ -1,0 +1,62 @@
+
+<%- include('../partials/header.ejs') %>
+
+
+
+
+</header>
+
+
+<div class="dashboard">
+  <div class="dashboard__header">
+    <div class="dash-text">
+      <h2>Admin Dashboard</h2>
+    </div>
+    <div class="dash-content">
+      <img src="/images/DP.jpg" alt="...">
+      <!-- <h3>Sanni</h3> -->
+    </div>
+  </div>
+</div>
+
+
+<section>
+  <div class="List">
+    <div class="list-txt">
+      <h2>Users List</h2>
+    </div>
+
+
+      <% if( adminUsers.length > 0 ){ %>
+         <% adminUsers.forEach(adimnUser => { %>
+
+<a href="/admin-dashboard/user/details/<%= adimnUser._id %>">
+ <div class="lis-content">
+    <div class="cont-txt">
+  <h2><%= adimnUser.firstName %>  <%= adimnUser.lastName %></h2>
+  <p><%= adimnUser.email %></p>
+  <a href="#" style="float: right; margin:0px 0px -10px 0px; padding: 0;"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+     </div>
+  </div>
+</a>
+
+<% }) %>
+<% } else { %>
+<h2 style="padding: 40px; text-align: center;">There are no Users available...</h2>
+<% } %>
+
+
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>
