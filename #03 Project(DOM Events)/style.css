@@ -1,0 +1,137 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+   background-color: #ddd;
+}
+h1
+{
+    color: #fff;
+    font-family: monospace;
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+.header
+{
+    background-color: rgb(6, 167, 216);
+    padding: 10px;
+}
+li
+{
+    background-color: #fff;
+    padding: 20px;
+    border-style: solid;
+    border-color: rgb(134, 132, 132);
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+}
+.delete
+{
+    background-color: rgb(6, 167, 216);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    float: right;
+}
+.delete:hover
+{
+    background-color: #fff;
+    color: rgb(6, 167, 216);
+    border-color: rgb(6, 167, 216);
+    border-style: solid;
+}
+.name
+{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#search-box
+{
+    height: 40px;
+    width: 400px;
+    outline-style: none;
+    border-radius: 8px;
+    border-color: rgb(129, 129, 129);
+    border-top: rgb(129, 129, 129);
+    border-left: rgb(129, 129, 129);
+    margin-left: 30px;
+}
+.footer
+{
+   background-color: rgb(6, 167, 216);
+   padding: 30px;
+   margin-top: 20px;
+}
+#add-box
+{
+    height: 40px;
+    width: 400px;
+    outline-style: none;
+    border-radius: 8px;
+    border-color: rgb(129, 129, 129);
+    border-top: rgb(129, 129, 129);
+    border-left: rgb(129, 129, 129);
+}
+#submit-box
+{
+    background-color: #fff;
+    color: rgb(6, 167, 216);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: rgb(6, 167, 216);
+}
+#submit-box:hover
+{
+    background-color: rgb(6, 146, 189);
+    color: #fff;
+    border-radius: 8px;
+    outline-style: none;
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+#message
+{
+    background-color: #fff;
+    margin: 20px;
+    padding: 20pxs;
+    text-align: center;
+    border-radius: 8px;
+    border-color: rgb(129, 129, 129);
+    border-top: #ddd;
+    border-left: #ddd;
+    border-right: rgb(129, 129, 129);
+    border-bottom: rgb(129, 129, 129);
+    border-style: solid;
+    display: none;
+}
+#message.show
+{
+    background-color: #fff;
+    margin: 20px;
+    padding: 20pxs;
+    text-align: center;
+    border-radius: 8px;
+    border-color: rgb(129, 129, 129);
+    border-top: #ddd;
+    border-left: #ddd;
+    border-right: rgb(129, 129, 129);
+    border-bottom: rgb(129, 129, 129);
+    border-style: solid;
+    display: block;
+}
+h4
+{
+    padding: 20px;
+    margin: 20px;
+}

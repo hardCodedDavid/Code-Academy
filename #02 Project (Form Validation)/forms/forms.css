@@ -1,0 +1,60 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+body
+{
+   background-color: #fff;
+}
+.container
+{
+  background-color: rgba(204, 204, 204, 0.295);
+  padding: 50px;
+  margin: 20px 20px;
+
+  
+}
+input
+{
+  display: grid;
+  grid-template-rows: 50px 50px 50px 50px;
+  padding: 20px 20px 20px 20px;
+  width: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border-color: #fff;
+  outline: none;
+}
+#btn
+{
+  background-color: rgb(69, 186, 240);
+  height: 5px;
+  width: 100px;
+  margin-top: 40px;
+  color: #fff;
+  border-radius: 5px;
+  border-color: rgb(69, 186, 240);
+  outline: none;
+}
+#btn:hover
+{
+ background-color: rgb(106, 187, 224);
+ transform: scale(1.05);
+ transition: 0.5s;
+}
+h1
+{
+  text-align: center;
+  color: rgb(105, 105, 105);
+  margin-bottom: 20px;
+}
+#message
+{
+  background-color: rgb(238, 114, 114);
+ /* padding: 20px; */
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 20px;
+}
