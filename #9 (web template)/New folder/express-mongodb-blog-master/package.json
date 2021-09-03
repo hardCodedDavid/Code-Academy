@@ -1,0 +1,24 @@
+{
+  "name": "express-mongodb-blog",
+  "version": "0.0.1",
+  "description": "This is a sample blog using NodeJS, ExpressJS, Jade, mongodb and mongoose. The base of blog was built by following the online tutorial from MongoDB University.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marekdanolab/express-mongodb-blog.git"
+  },
+  "author": "Marek Dano",
+  "bugs": {
+    "url": "https://github.com/marekdanolab/express-mongodb-blog/issues"
+  },
+  "dependencies": {
+    "mongoose": "~5.7.7",
+    "express": "~4.17.1",
+    "jade": "~1.11.0",
+    "mongoose-lifecycle": "~1.0.0",
+    "express-mongoose": "~0.1.0"
+  }
+}

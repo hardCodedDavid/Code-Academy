@@ -1,0 +1,233 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+/*---=== Utility  ====----*/
+body
+{
+    background-color: rgb(212, 212, 212);
+}
+/*---=== Head ====----*/
+#header
+{
+    background-color: rgb(110, 188, 219);
+    color: rgb(216, 216, 216);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-area: navs;
+}
+#header a 
+{
+    color: rgb(216, 216, 216);
+    text-decoration: none;
+    margin-top: 20px;
+    margin: 10px;
+}
+.head-text
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+/*---=== content-1  ====----*/
+#content-1
+{
+    color: rgb(65, 65, 65);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    grid-area: title;
+}
+
+/*---=== sales box  ====----*/
+#sales-content
+{
+    background-color: rgb(245, 241, 237);
+    max-width: 700px;
+    grid-area: sale;
+}
+.sales-box
+{
+    display: flex;
+    padding: 20px;
+    border: 1px;
+    border-style: solid;
+    border-bottom-color: rgb(65, 65, 65);
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+}
+#sales-content img
+{
+   max-width: 150px;
+   min-width: 150px;
+   max-height: 95px;
+   min-height: 95px;
+   border-radius: 5px;
+}
+#sales-content p
+{
+    max-height: 50px;
+    min-height: 50px;
+    overflow: hidden;
+    padding-left: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 15px;
+}
+#sales-content h2
+{
+    padding-left: 40px;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#sales-content h3
+{
+    text-align: right;
+}
+
+#side-bar
+{
+    display: none;
+}
+.delete
+{
+    background-color: rgb(53, 53, 53);
+    color: #fff;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.delete:hover
+{
+    background-color: rgb(92, 92, 92);
+}
+
+
+/*------- ========  Media Query   ======= ---------*/
+
+@media screen and (min-width: 700px)
+{
+    #sales-content
+{
+    margin-right: 40px;
+    max-width: 1100px;
+}
+    #side-bar
+{
+    display: block;
+    background-color: rgb(243, 236, 228);
+    grid-area: side;
+}
+
+    #container
+    {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr;
+        grid-template-rows: 0.1fr 0.5fr 1fr 1fr 1fr 1fr 0.7fr;
+        grid-template-areas: 
+        "navs navs navs"
+        "side title title"
+        "side sale sale"
+        "side sale sale"
+        "side sale sale"
+        "side sale sale"
+        "foot foot foot"
+        
+        ;
+    }
+
+    #sales-content img
+{
+   max-width: 250px;
+   min-width: 250px;
+   max-height: 150px;
+   min-height: 150px;
+   border-radius: 5px;
+}
+#sales-content p
+{
+    max-height: 50px;
+    min-height: 50px;
+    overflow: hidden;
+    padding-left: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding-top: 15px;
+}
+#sales-content h2
+{
+    padding-left: 40px;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#side-bar h3
+{
+     padding: 20px;
+     border: 1px;
+     border-style: solid;
+     border-bottom-color: rgb(65, 65, 65);
+     border-top-color: #fff;
+     border-left-color: #fff;
+     border-right-color: #fff;
+     text-align: center;
+}
+}
+
+
+@media screen and (max-width: 420px)
+{
+    #sales-content img
+{
+   max-width: 90px;
+   min-width: 90px;
+   max-height: 65px;
+   min-height: 65px;
+   border-radius: 5px;
+}
+#sales-content p
+{
+    max-height: 30px;
+    min-height: 30px;
+    overflow: hidden;
+    padding-left: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 15px;
+    font-size: 10px;
+}
+#sales-content h2
+{
+    padding-left: 40px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#sales-content h3
+{
+    text-align: right;
+    font-size: 10px;
+}
+#content-1
+{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.sales-box
+{
+    padding: 10px;
+}
+#header a 
+{
+    display: none;
+}
+.head-text h3
+{
+    margin: auto;
+}
+}
+
+
+

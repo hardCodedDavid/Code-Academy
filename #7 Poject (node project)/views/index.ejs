@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/sales.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+    <section id="header">
+        <div class="head-text">
+        <h3>Cash Sales</h3>
+        <div class="navs">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Search</a>
+        <a href="/add-product">Add Product</a>
+       </div>
+   </div>
+    </section>
+
+    <section id="content-1">
+        <h2>Top Sales</h2>
+    </section>
+
+    <% if(product.length > 0){ %> 
+        <% product.forEach(productName => { %>
+
+<section id="sales-content">
+   <div class="sales-box">
+       <div class="sales-text">
+       <h2><%= productName.product %></h2>
+       <p><%= productName.description %></p>
+   </div>
+   <h3><%= productName.price %></h3>
+   <a class="delete" data-doc="<%= product._id %> ">delete</a>
+   </div>
+   <% }) %> 
+   <% } else { %> 
+       <p>There are no products for now........</p>
+   <% } %>
+
+</section>
+
+<section id="side-bar">
+<div class="bar">
+    <h3>Product 1</h3>
+    <h3>Product 2</h3>
+    <h3>Product 3</h3>
+    <h3>Product 4</h3>
+    <h3>Product 5</h3>
+    <h3>Product 6</h3>
+    <h3>Product 7</h3>
+    <h3>Product 8</h3>
+</div>    
+</div>
+</section>
+
+<script>
+const trashCan = document.querySelector("a .delete");
+trashCan.addEventListener('click', (e) => {
+    const endpoint = `/product/${trashcan.dataset.doc}`;
+
+    fetch(endpoint, {
+        method: "DELETE"
+    })
+    .then((response) => response.json())
+    .then((data) => window.location.href = data.redirect)
+    .catch(err => console.log(err))
+})
+</script>
+</body>
+</html>

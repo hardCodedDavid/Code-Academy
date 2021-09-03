@@ -1,0 +1,244 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+body
+{
+  color: #555;
+
+}
+#nav
+{
+  background-color: #eee;
+}
+#nav a
+{
+  text-decoration: none;
+  color: #888;
+  font-family: sans-serif;
+  font-weight: 100;
+  margin-left: 10px;
+}
+#nav h1
+{
+  font-family: sans-serif;
+  font-weight: 200;
+}
+.nav
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 70rem;
+  margin: auto;
+  padding: 20px;
+}
+
+/*  page-1 */
+
+.content-head
+{
+  display: flex;
+}
+.content-body
+{
+  padding-top: 10%;
+  padding-left: 5%;
+}
+.content-body h1
+{
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  --tw-bg-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-bg-opacity));
+}
+.content-body p
+{
+  font-family: sans-serif;
+  font-weight: 100;
+  padding-bottom: 30px;
+
+}
+.content-body a
+{
+  text-decoration: none;
+  --tw-bg-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  font-family: sans-serif;
+  font-weight: 100;
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  padding: 8px;
+  border-radius: 5px;
+}
+.content-head img
+{
+  width: 40%;
+  height: 20%;
+  margin-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.Reci
+{
+  --tw-bg-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-bg-opacity));
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 3rem;
+  padding-bottom: 10px;
+  text-align: center;
+  padding: 30px
+}
+.line
+{
+  border: 3px;
+  background-color: #ccc;
+  padding: 1px;
+  width: 280px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+/* -------   box container    ------*/
+.box
+{
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+ display: flex;
+ margin-top: 10px;
+}
+.txt
+{
+  padding-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.txt h3
+{
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 1.6rem;
+}
+.txt p
+{
+  max-width: 300px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+.txt a
+{
+  text-decoration: none;
+  --tw-bg-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  font-family: sans-serif;
+  font-weight: 100;
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  padding: 8px;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.box img
+{
+  width: 20%;
+  height: 5%;
+  padding: 1rem;
+  border-radius: 1.5rem;
+}
+.more a
+{
+  text-decoration: none;
+  --tw-bg-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  font-family: sans-serif;
+  font-weight: 100;
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  padding: 15px;
+  border-radius: 5px;
+}
+.more
+{
+  margin: 80px auto 100px 45%;
+}
+footer
+{
+  padding: 40px;
+  text-align: center;
+}
+
+
+
+/* -------   forms    ------*/
+form
+{
+  width: 250px;
+  margin: auto;
+}
+.form-box h1
+{
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  --tw-bg-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-bg-opacity));
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+}
+.line-2
+{
+  border: 3px;
+  background-color: #ccc;
+  padding: 1px;
+  width: 150px;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: -20px;
+}
+
+.form-box
+{
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  padding-bottom: 160px;
+  width: 400px;
+  margin: 40px auto 60px auto;
+}
+.submit
+{
+  text-decoration: none;
+  --tw-bg-opacity: 1;
+  color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  font-family: sans-serif;
+  font-weight: 100;
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+  padding: 5px 20px 20px 20px;
+  border-radius: 5px;
+  border-style: none;
+}
+input
+{
+  margin-bottom: 40px;
+  border: 2px;
+  border-style: solid;
+  border-bottom-color: #bbb;
+  border-right-color: #bbb;
+  border-top: none;
+  border-left: none;
+  border-radius: 3px;
+  outline-style: none;
+  height: 20px;
+}
+.errors{
+
+  margin-bottom: 5px;
+  text-align: center;
+  color: red;
+
+}

@@ -1,0 +1,220 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+/*---=== Utility  ====----*/
+body
+{
+    background-color: rgb(212, 212, 212);
+}
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200;1,600&display=swap');
+/*---=== Head ====----*/
+#header
+{
+    background-color: rgb(110, 188, 219);
+    color: rgb(216, 216, 216);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-area: navs;
+}
+#header a 
+{
+    color: rgb(216, 216, 216);
+    text-decoration: none;
+    margin-top: 20px;
+    margin: 10px;
+}
+.head-text
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+/*---=== content-1  ====----*/
+#content-1
+{
+    color: rgb(65, 65, 65);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    grid-area: title;
+}
+/*---=== sales box  ====----*/
+#sales-content
+{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-gap: 20px;
+    grid-column-gap: 220px;
+    grid-area: cont;
+}
+.sales-box
+{
+    background-color: aliceblue;
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 300px;
+    min-height: 300px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    margin-left: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+ /*  #sales-content img
+{
+   max-width: 250px;
+   min-width: 250px;
+   max-height: 150px;
+   min-height: 150px;
+   margin-left: 22px;
+   border-radius: 10px;
+}
+*/
+.sales-text
+{
+    margin-left: 22px;
+    margin-right: 22px;
+    padding-top: 120px;
+}
+.text-h2
+{
+    color: rgb(29, 29, 29);
+    padding-top: -10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif,;
+    font-weight: 600;
+
+}
+.text-p
+{
+    color: rgb(44, 44, 44);
+    padding-bottom: 10px;
+    width: 100px;
+    font-family: 'Antic Slab', serif;
+    padding-top: 15px;
+    font-weight: 100;
+}
+
+/*---=== About  ====----*/
+#about-1 h2
+{
+    color: rgb(65, 65, 65);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+}
+#about-1 p
+{
+    font-size: 20px;
+    margin: 20px;
+}
+
+/*---=== Create  ====----*/
+#create h2
+{
+    color: rgb(65, 65, 65);
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+}
+#create form
+{
+    display: grid;
+    grid-template-rows: max-content;
+    max-width: 300px;
+    margin: auto;
+    color: rgb(65, 65, 65);
+}
+#create form input
+{
+   margin-bottom: 20px;
+}
+
+
+
+
+
+/*---=== Media Query  ====----*/
+@media screen and (max-width: 500px)
+{
+    #sales-content
+    {
+        display: block;
+    }
+    .sales-box
+    {
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 420px)
+{
+  /*---  #header a 
+{
+    display: none;
+}  ---*/
+.head-text h3
+{
+    margin: auto;
+}
+#container
+{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 0.01fr 0.03fr 1fr ;
+    grid-template-areas: 
+    "navs "
+    "title "
+    "cont "
+    ;
+}
+
+    .sales-box
+{
+    background-color: aliceblue;
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 150px;
+    min-height: 150px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    border-radius: 10px;
+    margin: auto auto 10px auto;
+}
+#sales-content img
+{
+   max-width: 150px;
+   min-width: 150px;
+   max-height: 100px;
+   min-height: 100px;
+   margin-left: 25px;
+   border-radius: 10px;
+}
+.sales-text h2
+{
+    padding-top: -5px;
+    padding-bottom: 1px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sales-text p
+{
+    font-size: 10px;
+    padding-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 5px;
+}
+}

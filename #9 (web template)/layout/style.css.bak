@@ -1,0 +1,189 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+a
+{
+  text-decoration: none;
+}
+nav
+{
+  background-color: rgb(244, 244, 244);
+}
+.all-navs
+{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1100px;
+  padding: 20px;
+}
+.all-navs h3
+{
+  font-family: sans-serif;
+  font-size: 23px;
+  font-weight: 100;
+  color: rgb(85, 85, 85);
+}
+.all-navs a
+{
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(85, 85, 85);
+  margin: 5px;
+}
+.all-navs a:hover
+{
+  color: rgb(10, 10, 10);
+}
+.all-navs li
+{
+  list-style-type: none;
+}
+.S-1
+{
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+.S-1 img
+{
+  width: 70%;
+  height: 90%;
+}
+.note-1
+{
+  padding-top: 30px;
+}
+
+h2
+{
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+  color: rgb(109, 109, 109);
+  padding-bottom: 20px;
+}
+.note-1 p
+{
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+  color: rgb(109, 109, 109);
+  padding-bottom: 20px;
+}
+.read-btn
+{
+  background-color: rgb(38, 86, 41);
+  text-align: center;
+  border-radius: 4px;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  padding: 3px;
+}
+.read-btn a
+{
+  color: white;
+  padding: 10px;
+}
+.S-2 h2
+{
+  padding-top: 30px;
+  text-align: center;
+}
+.underline
+{
+  background-color: rgb(109, 109, 109);
+  padding: 1px;
+  width: 150px;
+  margin: auto;
+}
+.books 
+{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.img-books img
+{
+  max-width: 60%;
+  max-height: 70%;
+  min-width: 60%;
+  min-height: 70%;
+  width: 60%;
+  height: 70%;
+  padding: 40px 0px 60px 20px;
+}
+.view-btn
+{
+  background-color: rgb(38, 86, 41);
+  text-align: center;
+  border-radius: 4px;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  padding: 5px;
+  margin-left: 40%;
+}
+.view-btn a
+{
+  color: white;
+  padding: 10px;
+}
+.S-3
+{
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 20px;
+  justify-content: center;
+}
+.S-3 img
+{
+  width: 50%;
+  height: 80%;
+  margin-left: 35%;
+}
+.note-2
+{
+  padding-top: 10%;
+}
+
+h2
+{
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+  color: rgb(109, 109, 109);
+  padding-bottom: 20px;
+}
+.note-2 p
+{
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+  color: rgb(109, 109, 109);
+  padding-bottom: 20px;
+}
+
+.subject-box
+{
+  padding-top: 2%;
+  margin-top: 5%;
+  background-color: rgb(230, 230, 230);
+  
+}
+.img-sbj img
+{
+  width: 20%;
+  height: 50%;
+}
+.main-box
+{
+  display: flex;
+}
